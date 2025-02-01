@@ -1,0 +1,14 @@
+.photo-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.photo {
+    width: 50vw;
+    height: 50vh;
+    object-fit: cover;
+    border-radius: 8px;
+  }
