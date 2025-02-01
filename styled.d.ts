@@ -1,7 +1,8 @@
 import 'styled-components';
 
 
-/* and extend them!
+/* and extend them! */
+
 declare module 'styled-components' {
   export interface DefaultTheme {
     borderRadius: string;
@@ -12,4 +13,4 @@ declare module 'styled-components' {
       secondary: string;
     };
   }
-} */
+}

@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/header/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1738373422714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738373446789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n import { useState } from \"react\";\n \n \n export const Header=()=>{\n-    const [menuOpen, setMenuOpen] = useState(false);\n     return (<header className=\"bg-white shadow-md\">\n     <div className=\"container mx-auto px-4 py-3 flex items-center justify-between\">\n       {/* Logo */}\n       <a href=\"#\" className=\"text-2xl font-bold text-blue-600\">\n@@ -33,23 +32,6 @@\n         {menuOpen ? <X size={28} /> : <Menu size={28} />}\n       </button>\n     </div>\n \n-    {/* Menu Mobile Dropdown */}\n-    {menuOpen && (\n-      <nav className=\"md:hidden bg-white border-t\">\n-        <a href=\"#\" className=\"block px-4 py-2 text-gray-600 hover:bg-gray-100\">\n-          Início\n-        </a>\n-        <a href=\"#\" className=\"block px-4 py-2 text-gray-600 hover:bg-gray-100\">\n-          Sobre\n-        </a>\n-        <a href=\"#\" className=\"block px-4 py-2 text-gray-600 hover:bg-gray-100\">\n-          Contato\n-        </a>\n-        <a href=\"#\" className=\"block px-4 py-2 text-blue-600 hover:bg-gray-100\">\n-          Login\n-        </a>\n-      </nav>\n-    )}\n   </header>)\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738373460379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState } from \"react\";\n import { Menu, X } from \"lucide-react\";\n-impo\n+impor\n export const Header=()=>{\n     const [menuOpen, setMenuOpen] = useState(false);\n     return (<header className=\"bg-white shadow-md\">\n     <div className=\"container mx-auto px-4 py-3 flex items-center justify-between\">\n"
+                },
+                {
+                    "date": 1738373468813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { useState } from \"react\";\n import { Menu, X } from \"lucide-react\";\n-import styke\n+import styk\n export const Header=()=>{\n     const [menuOpen, setMenuOpen] = useState(false);\n     return (<header className=\"bg-white shadow-md\">\n     <div className=\"container mx-auto px-4 py-3 flex items-center justify-between\">\n"
+                }
+            ],
+            "date": 1738373422714,
+            "name": "Commit-0",
+            "content": "import { useState } from \"react\";\n\n\nexport const Header=()=>{\n    const [menuOpen, setMenuOpen] = useState(false);\n    return (<header className=\"bg-white shadow-md\">\n    <div className=\"container mx-auto px-4 py-3 flex items-center justify-between\">\n      {/* Logo */}\n      <a href=\"#\" className=\"text-2xl font-bold text-blue-600\">\n        MeuSite\n      </a>\n\n      {/* Links Desktop */}\n      <nav className=\"hidden md:flex space-x-6\">\n        <a href=\"#\" className=\"text-gray-600 hover:text-blue-600\">\n          Início\n        </a>\n        <a href=\"#\" className=\"text-gray-600 hover:text-blue-600\">\n          Sobre\n        </a>\n        <a href=\"#\" className=\"text-gray-600 hover:text-blue-600\">\n          Contato\n        </a>\n      </nav>\n\n      {/* Botão de Login */}\n      <button className=\"hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700\">\n        Login\n      </button>\n\n      {/* Menu Mobile */}\n      <button className=\"md:hidden\" onClick={() => setMenuOpen(!menuOpen)}>\n        {menuOpen ? <X size={28} /> : <Menu size={28} />}\n      </button>\n    </div>\n\n    {/* Menu Mobile Dropdown */}\n    {menuOpen && (\n      <nav className=\"md:hidden bg-white border-t\">\n        <a href=\"#\" className=\"block px-4 py-2 text-gray-600 hover:bg-gray-100\">\n          Início\n        </a>\n        <a href=\"#\" className=\"block px-4 py-2 text-gray-600 hover:bg-gray-100\">\n          Sobre\n        </a>\n        <a href=\"#\" className=\"block px-4 py-2 text-gray-600 hover:bg-gray-100\">\n          Contato\n        </a>\n        <a href=\"#\" className=\"block px-4 py-2 text-blue-600 hover:bg-gray-100\">\n          Login\n        </a>\n      </nav>\n    )}\n  </header>)\n}"
+        }
+    ]
+}

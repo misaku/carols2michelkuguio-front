@@ -1,0 +1,26 @@
+{
+    "sourceFile": "styled.d.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1738372583638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738372589811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,6 @@\n import 'styled-components';\n \n-e\n \n+\n /* and extend them!\n-declare module 'styled-components' {\n-  export interface DefaultTheme {\n-    borderRadius: string;\n-\n-\n-    colors: {\n-      main: string;\n-      secondary: string;\n-    };\n-  }\n\\ No newline at end of file\n-} */\n+ */\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738372644122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import 'styled-components';\n \n \n+\n /* and extend them! */\n \n declare module 'styled-components' {\n   export interface DefaultTheme {\n"
+                }
+            ],
+            "date": 1738372583638,
+            "name": "Commit-0",
+            "content": "import 'styled-components';\n\ne\n\n/* and extend them!\ndeclare module 'styled-components' {\n  export interface DefaultTheme {\n    borderRadius: string;\n\n\n    colors: {\n      main: string;\n      secondary: string;\n    };\n  }\n} */"
+        }
+    ]
+}
