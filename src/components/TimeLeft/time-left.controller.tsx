@@ -1,8 +1,7 @@
 import {useEffect, useState} from "react";
 import {intervalToDuration, parseISO} from "date-fns";
 import {formatInTimeZone} from 'date-fns-tz'
-import {TimeLeftProps} from "./index.tsx";
-import {CountdownSectionProps} from "./time-left.types.tsx";
+import {CountdownSectionProps, TimeLeftProps} from "./time-left.types.tsx";
 
 function formatToTwoDigits(value: number | undefined | null) {
     if (!value) {

@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 import minhaFoto from '../../assets/groom-putting-ring-bride-s-finger.jpg'
 import flower from '../../assets/flower-small.svg'
-import {TimeLeft} from "../TimeLeft";
 
 
 export const HeaderWrapper = styled.header`
@@ -87,7 +86,7 @@ export const NavBar = styled.nav`
 `;
 
 
-const HeaderText = styled.div`
+export const HeaderText = styled.div`
     font-family: "Great Vibes", serif;
     display: flex;
     flex-direction: column;
@@ -124,7 +123,7 @@ const HeaderText = styled.div`
 `;
 
 
-const ContentHeader = styled.div`
+export const ContentHeader = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -132,7 +131,7 @@ const ContentHeader = styled.div`
     align-items: center;
 `;
 
-const WrapperContent = styled.div`
+export const WrapperContent = styled.div`
     padding: 5rem 14rem;
     position: relative;;
 
@@ -178,39 +177,3 @@ const WrapperContent = styled.div`
         filter: invert(24%) sepia(93%) saturate(610%) hue-rotate(-56deg) brightness(92%) contrast(87%);
     }
 `
-export const Header = () => {
-    const targetDate = "2025-09-27T17:00:00Z";
-    return (
-        <>
-            <HeaderWrapper>
-                <WrapperNavBar>
-                    <NavBar>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Quem Somos</a></li>
-                            <li><a href="#">Nossa História</a></li>
-                            <li><a href="#">Confirmação</a></li>
-                            <li><a href="#">Conheça os Padrinhos</a></li>
-                            <li><a href="#">O Casamento</a></li>
-                            <li><a href="#">Local</a></li>
-                            <li><a href="#">Galeria</a></li>
-                        </ul>
-                    </NavBar>
-                </WrapperNavBar>
-                <ContentHeader>
-                    <WrapperContent>
-                        <HeaderText>
-                            <strong>Carol</strong>
-                            <span>&</span>
-                            <strong>Michel</strong>
-                        </HeaderText>
-                    </WrapperContent>
-
-
-                </ContentHeader>
-                <TimeLeft targetDate={targetDate}/>
-            </HeaderWrapper>
-        </>
-
-    );
-};
