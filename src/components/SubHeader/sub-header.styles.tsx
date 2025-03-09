@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 
 import minhaFoto from '../../assets/groom-putting-ring-bride-s-finger.jpg'
 import flower from '../../assets/flower-small.svg'
@@ -34,7 +34,10 @@ export const HeaderWrapper = styled.header`
     
 }
 `;
-export const ContainerSubHeader = styled.div`
+interface ContainerSubHeaderProps {
+    invert?: boolean
+}
+export const ContainerSubHeader = styled.div<ContainerSubHeaderProps>`
     display: flex;
     flex: 1;
 
@@ -61,7 +64,18 @@ export const ContainerSubHeader = styled.div`
         border-style: solid;
         border-width: 130px 0 0 100vw;
         border-color: transparent transparent transparent #fff;
+        
     }
+    ${({invert}) => invert && css`
+        &::before {
+            border-width: 130px 0 0 100vw;
+            border-color: #fff transparent transparent transparent;
+        }
+        &::after {
+        border-width: 130px 100vw 0 0;
+        border-color: transparent #fff  transparent transparent;
+        }
+    `}
 `;
 
 export const HeaderText = styled.div`
@@ -98,7 +112,11 @@ export const ContentHeader = styled.div`
 `;
 
 export const WrapperContent = styled.div`
-    position: relative;;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `
 
 export const Ring = styled.div`
@@ -153,7 +171,7 @@ export const Line = styled.div`
         height: 10rem;
         position: absolute;
         bottom: -2rem;
-        right: 2rem;
+        right: -6.5rem;
         z-index: 1;
         background-position: center center;
         background-repeat: no-repeat;
@@ -170,7 +188,7 @@ export const Line = styled.div`
         height: 10rem;
         position: absolute;
         bottom: -4rem;
-        right: 17rem;
+        right: 9rem;
         z-index: 1;
         background-position: center center;
         background-repeat: no-repeat;

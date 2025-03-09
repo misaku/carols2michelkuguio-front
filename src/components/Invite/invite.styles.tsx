@@ -1,26 +1,7 @@
 import styled, {css} from 'styled-components';
 import flower from '../../assets/flower-large.svg'
-import {CardProps, WrapperCardProps} from "./about-us.types.tsx";
+import {CardProps, WrapperCardProps} from "./invite.types.tsx";
 
-export const MontserratTitle = styled.h1`
-    font-family: "Montserrat", "Open Sans", "Raleway", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 3rem;
-    color: #a8735e;
-    align-self: center;
-`
-export const MontserratP = styled.p`
-    font-family: "Montserrat", "Open Sans", "Raleway", serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 2rem;
-    color: #9f9693;
-    align-items: stretch;
-    width: 100%;
-`
 
 export const Container = styled.section`
     max-width: 1200px;
@@ -51,17 +32,27 @@ export const WrapperCard = styled.section<WrapperCardProps>`
         clip-path: inset(0 0 0 0);
         background-repeat: no-repeat;
         background-size: contain;
-        top: -4px;
-        left: -167px;
+        top: -75px;
+        left: -170px;
         transform: scaleX(-1) rotate(102deg);
-        ${props => props.invert && css`
-            content: "";
-            right: -154px;
-            bottom: -12px;
-            left: auto;
-            top: auto;
-            transform: scaleX(-1) rotate(285deg);
-        `} //filter: invert(7%) sepia(41%) saturate(237%) hue-rotate(-395deg) brightness(80%) contrast(90%)
+    }
+
+    &::after {
+        content: "";
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        z-index: -1;
+        background-position: center center;
+        background-image: url(${flower});
+        clip-path: inset(0 0 0 0);
+        background-repeat: no-repeat;
+        background-size: contain;
+        right: -170px !important;
+        bottom: -75px !important;
+        left: auto;
+        top: auto;
+        transform: scaleX(-1) rotate(285deg);
     }
 `
 export const HorizontMarging = styled.div`
@@ -105,14 +96,9 @@ export const Card = styled.div<CardProps>`
     --offset: 12px;
     --border-size: 1px;
     position: relative;
-    right: -70px;
-    top: 80px;
-    aspect-ratio: 7/4.8;
-    ${props => props.invert && css`
-        right: auto;
-        left: -70px;
-        top: 0px;
-    `}
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
     background-color: rgb(255, 255, 255);
     -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
     -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
@@ -144,6 +130,61 @@ export const Card = styled.div<CardProps>`
     // }
     
 `
+export const Wrapper = styled.div`
+    height: auto;
+    max-width:100vw;
+    overflow: hidden;
+    padding: 70px;
+    padding-bottom: 300px;
+    padding-top: 94px;
+`
+export const Button = styled.button`
+    margin-top: 4rem;
+    padding: 1rem;
+    background: #ae8472;
+    color: #fff;
+    font-weight: 400;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    &:hover{
+        background: #a0715e;
+    }
+`
+export const ContentCard = styled.div`
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat", "Open Sans", "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2rem;
+    color: #9f9693;
+    text-align: justify;
+    align-items: stretch;
+    width: 100%;
+    gap: 2rem;
+    h1{
+        font-weight: 500;
+        font-style: normal;
+        font-size: 3rem;
+        color: #a8735e;
+        align-self: center;
+    }
+`
+export const ColorBox = styled.div`
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: ${props => props.color};
+;
+`
+export const ColorPalettes = styled.div`
+   display: flex;
+    gap: 1rem;
+;
+`
 
 export const Image = styled.img`
     height: auto;
@@ -153,10 +194,5 @@ export const Image = styled.img`
     object-position: center top;
     border: 32px solid rgb(255, 255, 255);
 `
-export const Wrapper = styled.div`
-    height: auto;
-    max-width:100vw;
-    overflow: hidden;
-    padding-bottom: 30px;
-`
+
 

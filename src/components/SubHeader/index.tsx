@@ -7,16 +7,19 @@ import {
     WrapperContent
 } from "./sub-header.styles.tsx";
 
-
-export const SubHeader = () => {
+interface ContainerSubHeaderProps {
+    invert?: boolean
+    title: string
+}
+export const SubHeader:React.FC<ContainerSubHeaderProps> = ({title, invert=false}) => {
     return (
 
         <HeaderWrapper>
-            <ContainerSubHeader>
+            <ContainerSubHeader invert={invert}>
                 <ContentHeader>
                     <WrapperContent>
                         <HeaderText>
-                            <strong>Nossa Historia</strong>
+                            <strong>{title}</strong>
                         </HeaderText>
                         <Line><Ring /></Line>
                     </WrapperContent>

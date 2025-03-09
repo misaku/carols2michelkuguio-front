@@ -1,11 +1,21 @@
-import { MontserratTitle, Container, MontserratP, WrapperCard, Card, HorizontMarging, VerticalMarging, Image } from "./about-us.styles"
+import {
+    MontserratTitle,
+    Container,
+    MontserratP,
+    WrapperCard,
+    Card,
+    HorizontMarging,
+    VerticalMarging,
+    Image,
+    Wrapper
+} from "./about-us.styles"
 
 import noiva from '../../assets/noiva.jpg'
 import noivo from '../../assets/noivo.jpg'
 
 export function AboutUs() {
     return (
-
+<Wrapper>
         <Container>
             <MontserratTitle>Ele perguntou e ela disse sim!</MontserratTitle>
             <MontserratP>Em meio ao perfume das flores de Holambra, sob um céu pintado pelo pôr do sol, entre campos
@@ -48,6 +58,8 @@ export function AboutUs() {
 
             </WrapperCard>
         </Container>
+
+</Wrapper>
 
     )
 }
