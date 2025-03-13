@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import noiva from '../../assets/noiva.jpg'
+import inicio from '../../assets/inicio.jpg'
 const LabelDate = styled.span`
     display: flex;
     flex-direction: column;
@@ -104,7 +105,7 @@ export function TimeLine(){
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sodales dui ut sem tincidunt, eget suscipit est posuere. Nam placerat lectus tortor, nec dapibus ex blandit eget.</p>
                 </Content>
             <Content>
-                <Image src={noiva} />
+                <Image src={inicio} />
             </Content>
             <LabelDate><span>01/01</span><span>2024</span></LabelDate>
         </Container>
