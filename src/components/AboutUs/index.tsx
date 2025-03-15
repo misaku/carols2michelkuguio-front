@@ -34,9 +34,10 @@ export function AboutUs() {
                     <HorizontMarging/>
                     <VerticalMarging/>
                     <MontserratTitle>Michel</MontserratTitle>
-                    <MontserratP> Michel tem uma energia que ilumina tudo ao seu redor.
-                        É impossível não admirar o homem incrível que ele é educado
-                        amoroso e dono de um coração imenso. Ao lado dele, encontrei mais do que um noivo: encontrei meu melhor amigo, meu porto seguro e o grande amor da minha vida
+                    <MontserratP> Michel tem uma energia que ilumina tudo ao seu redor. Seu jeito alegre e divertido contagia a todos, tornando qualquer momento mais leve e especial. Ele é um homem admirável, educado, inteligente, gentil e dono de um coração imenso.
+                        Ao lado dele, cada dia é repleto de boas conversas, risadas sinceras e gestos de carinho. Tive a sorte de encontrar na mesma pessoa amor, amizade, parceria verdadeira. Ele é o amor da minha vida 
+
+
                     </MontserratP>
                 </Card>
                 <Image src={noivo} alt={"sad"}/>
