@@ -188,11 +188,36 @@ export const ColorPalettes = styled.div`
 
 export const Image = styled.img`
     height: auto;
-    width: 40%;
+    width: 100%;
     object-fit: cover;
     aspect-ratio: 5 / 6;
     object-position: center top;
-    border: 32px solid rgb(255, 255, 255);
+    border-radius: 3px;
 `
+export const ContainerCard = styled.div`
+    display: flex;
+    gap: 2rem;
+`
+export const SectionCard = styled.section`
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+`
+export const WrapperImage = styled.div`
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    height: auto;
+    width: 100%;
+    max-width: 340px;
+    gap: 2rem;
+    strong{
+        text-transform: uppercase;
+        color: #a8735e;
+    }
+    
+}
+`
+
 
 

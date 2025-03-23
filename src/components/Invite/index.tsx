@@ -1,15 +1,17 @@
 import {
     Button,
     Card, ColorBox, ColorPalettes,
-    Container, ContentCard,
+    Container, ContentCard, ContainerCard, SectionCard,
     HorizontMarging,
     VerticalMarging,
     Wrapper,
-    WrapperCard
+    WrapperCard,
+    WrapperImage,
+    Image
 } from "./invite.styles.tsx";
 import * as React from "react";
-import {Image} from "../AboutUs/about-us.styles.tsx";
-import noivo from "../../assets/noivo.jpg";
+import padrinhos from "../../assets/padrinhos.jpg";
+import madrinhas from "../../assets/madrinhas.jpg";
 
 interface InvitationProps {
     type: 'padrinho' | 'madrinha' | 'convidado';
@@ -21,9 +23,9 @@ export const Invite: React.FC<InvitationProps> = ({type, name}) => {
     const renderMessage: (element: React.ReactElement) => React.ReactElement = (element) => {
         switch (type) {
             case 'padrinho':
-                return (<>
-                        <div style={{display: 'flex', alignItems: 'center', gap: '16px'}}>
-                            <div>
+                return (<ContainerCard>
+
+                            <SectionCard>
                                 <p>
                                     Querido <strong>{name}</strong>,<br/>
                                     Você é muito especial para nós e, por isso, gostaríamos de convidá-lo a ser
@@ -33,49 +35,67 @@ export const Invite: React.FC<InvitationProps> = ({type, name}) => {
                                 <p>
                                     <strong>Traje e Paleta de Cores:</strong>
                                     <br/>
-                                    - Terno: Preto ou Azul Marinho
-                                    <ColorPalettes>
-                                        <ColorBox color={'#7c7b7b'}/>
-                                        <ColorBox color={'#a3a1a1'}/>
-                                        <ColorBox color={'#99a8b6'}/>
-                                    </ColorPalettes>
-                                    <br/>
-                                    - Gravata: Azul Bebe ou sem gravata
-                                    <ColorPalettes>
-                                        <ColorBox color={'#e49a8d'}/>
-                                        <ColorBox color={'#f3ac9f'}/>
-                                        <ColorBox color={'#facab6'}/>
-                                    </ColorPalettes>
+                                    - Terno Cinza Claro e Sem Gravata
                                 </p>
-                            </div>
-                            <Image
-                                src={noivo}
-                                alt="Noivo"
-                                style={{maxWidth: '250px', height: 'auto', borderRadius: '8px'}}
-                            />
-                        </div>
+                                {element}
+                            </SectionCard>
+                            <WrapperImage>
+                                <strong>Paleta de cores</strong>
+                                <ColorPalettes>
+                                    <ColorBox color={'#e9ecef'}/>
+                                    <ColorBox color={'#edede9'}/>
+                                    <ColorBox color={'#dee2e6'}/>
+                                    <ColorBox color={'#ced4da'}/>
+                                    <ColorBox color={'#d4d4d4'}/>
+                                    <ColorBox color={'#c6cdd7'}/>
+                                    <ColorBox color={'#cbcbd7'}/>
+                                </ColorPalettes>
+                                <Image
+                                    src={padrinhos}
+                                    alt="Padrinhos"
+                                />
+                            </WrapperImage>
 
-                    </>
+
+                    </ContainerCard>
 
                 );
             case 'madrinha':
-                return (<>
-                        <p>
-                            Querida <strong>{name}</strong>,<br/>
-                            É com muito amor que convidamos você a ser nossa <strong>Madrinha</strong>. Sabemos que sua
-                            luz
-                            trará ainda
-                            mais encanto para o nosso grande dia! 💖
-                        </p>
-                        {element}
-                        <p>
-                            <strong>Vestimenta e Paleta de Cores:</strong>
-                            <br/>
-                            - Vestido Longo: [Informe a cor escolhida, ex: Rosa Chá]
-                            <br/>
-                            - Acessórios: Tonalidades leves e elegantes
-                        </p>
-                    </>
+                return (<ContainerCard>
+                        <SectionCard>
+                            <p>
+                                Querida <strong>{name}</strong>,<br/>
+                                É com muito amor que convidamos você a ser nossa <strong>Madrinha</strong>. Sabemos que sua
+                                luz
+                                trará ainda
+                                mais encanto para o nosso grande dia! 💖
+                            </p>
+                            {element}
+                            <p>
+                                <strong>Vestimenta e Paleta de Cores:</strong>
+                                <br/>
+                                - Vestido Longo: [Informe a cor escolhida, ex: Rosa Chá]
+                                <br/>
+                                - Acessórios: Tonalidades leves e elegantes
+                            </p>
+                        </SectionCard>
+                        <WrapperImage>
+                            <strong>Paleta de cores</strong>
+                            <ColorPalettes>
+                                <ColorBox color={'rgb(250,225,221)'}/>
+                                <ColorBox color={'rgb(250,227,228)'}/>
+                                <ColorBox color={'rgb(250,215,217)'}/>
+                                <ColorBox color={'rgb(250,216,231)'}/>
+                                <ColorBox color={'rgb(249,215,225)'}/>
+                                <ColorBox color={'rgb(247,199,219)'}/>
+                                <ColorBox color={'rgb(246,204,215)'}/>
+                            </ColorPalettes>
+                            <Image
+                                src={madrinhas}
+                                alt="Madrinhas"
+                            />
+                        </WrapperImage>
+                    </ContainerCard>
 
                 );
             default: // Convidado normal
@@ -102,19 +122,23 @@ export const Invite: React.FC<InvitationProps> = ({type, name}) => {
                         <ContentCard>
                             <h1>Estamos nos casando!</h1>
                             {renderMessage(
-                                <p>
-                                    Data: 27 de setembro de 2025<br/>
-                                    Local: Villaví - Recreio Internacional - Rua D 1550 - Ribeirao Preto-SP <br/>
-                                    Horário: 16:30
-                                </p>
+                                <>
+                                    <p>
+                                        Data: 27 de setembro de 2025<br/>
+                                        Local: Villaví - Recreio Internacional - Rua D 1550 - Ribeirao Preto-SP <br/>
+                                        Horário: 16:30
+                                    </p>
+                                    <p>Por favor, confirme sua presença até o dia !</p>
+                                    <p>
+                                        Com carinho, <strong>Michel dos Santos Kuguio</strong> & <strong>Carolina Tavares de
+                                        Oliveira</strong>
+                                    </p>
+                                </>
+
                             )}
 
 
-                            <p>Por favor, confirme sua presença até o dia !</p>
-                            <p>
-                                Com carinho, <strong>Michel dos Santos Kuguio</strong> & <strong>Carolina Tavares de
-                                Oliveira</strong>
-                            </p>
+
                             <Button>Confirmar</Button>
                         </ContentCard>
                     </Card>

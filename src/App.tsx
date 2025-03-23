@@ -19,6 +19,8 @@ function App() {
             <TimeLine />
             <SubHeader title={'Convite'}  invert={true}/>
             <Invite type={'padrinho'} name={'luan'} />
+            <Invite type={'madrinha'} name={'lurdes'} />
+            <Invite type={'convidado'} name={'gustavo e familia'} />
         </>
     )
 }
