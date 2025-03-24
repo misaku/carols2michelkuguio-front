@@ -77,7 +77,7 @@ export const NavBar = styled.nav`
         font-optical-sizing: auto;
         font-weight: 400;
         font-style: normal;
-        color: #fff;
+        color: ${props => props.theme.colors.colorWhite};
         font-size: 1.4rem;
         height: 1.4rem;
         line-height: 1.4rem;
@@ -92,7 +92,7 @@ export const HeaderText = styled.div`
     flex-direction: column;
     line-height: 10rem;
     font-style: normal;
-    color: white;
+    color: ${props => props.theme.colors.colorWhite};
     font-size: 10rem;
     font-weight: 700;
     align-items: center;

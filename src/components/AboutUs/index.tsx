@@ -30,6 +30,7 @@ export function AboutUs() {
             </MontserratP>
 
             <WrapperCard>
+                <Image src={noivo} alt={"sad"}/>
                 <Card>
                     <HorizontMarging/>
                     <VerticalMarging/>
@@ -40,20 +41,15 @@ export function AboutUs() {
 
                     </MontserratP>
                 </Card>
-                <Image src={noivo} alt={"sad"}/>
+
             </WrapperCard>
             <WrapperCard invert={true}>
-                <Image src={noiva} alt={"sad"}/>
+                <Image src={noiva} alt={"sad"} invert={true}/>
                 <Card invert={true}>
                     <HorizontMarging/>
                     <VerticalMarging/>
                     <MontserratTitle>Carol</MontserratTitle>
-                    <MontserratP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in tellus nec orci
-                        eleifend accumsan. Nullam ut ornare metus. Phasellus eu pulvinar purus. Praesent ut tortor
-                        eget arcu tempus luctus non non magna. Donec at nisl quis lectus porttitor cursus. Aliquam
-                        egestas sagittis auctor. In at lobortis nisl. Nunc at eros quis arcu rutrum eleifend eu eget
-                        nibh. Nullam eget posuere nibh. Nam nec nisi sit amet metus egestas rutrum. Pellentesque at
-                        ultricies tellus. Sed posuere molestie diam nec pharetra.
+                    <MontserratP>A Carol é uma mulher incrível, doce e meiga, sempre cheia de energia, capaz de cativar a todos com sua alegria. Ela carrega a inocência de uma menina, mas também a força de uma guerreira. Sua inteligência, determinação e companheirismo tornam impossível não admirar essa mulher. Eu orei tanto a Deus para que ela existisse, e Ele me entregou esse presente precioso chamado Carolina!
                     </MontserratP>
                 </Card>
 

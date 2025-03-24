@@ -61,8 +61,8 @@ export const HorizontMarging = styled.div`
     border-bottom: var(--border-size) solid currentcolor;
     top: calc(var(--border-size) * -1) !important;;
     bottom: calc(var(--border-size) * -1) !important;;
-    border-top-color: #ae8472;
-    border-bottom-color: #ae8472;
+    border-top-color: ${props => props.theme.colors.borderColor};
+    border-bottom-color: ${props => props.theme.colors.borderColor};
 
     &::before {
         top: calc(var(--vertical-offset) - var(--border-size));
@@ -77,8 +77,8 @@ export const VerticalMarging = styled.div`
     border-right: var(--border-size) solid currentcolor;
     right: calc(var(--border-size) * -1) !important;
     left: calc(var(--border-size) * -1) !important;;
-    border-left-color: #ae8472;
-    border-right-color: #ae8472;
+    border-left-color: ${props => props.theme.colors.borderColor};
+    border-right-color: ${props => props.theme.colors.borderColor};
 
     &::before {
         top: calc(var(--offset) - var(--border-size));
@@ -141,8 +141,8 @@ export const Wrapper = styled.div`
 export const Button = styled.button`
     margin-top: 4rem;
     padding: 1rem;
-    background: #ae8472;
-    color: #fff;
+    background: ${props => props.theme.colors.borderColor};
+    color: ${props => props.theme.colors.colorWhite};
     font-weight: 400;
     border: none;
     border-radius: 3px;
@@ -160,7 +160,7 @@ export const ContentCard = styled.div`
     font-weight: 300;
     font-style: normal;
     font-size: 2rem;
-    color: #9f9693;
+    color: ${props => props.theme.colors.defaultColor};
     text-align: justify;
     align-items: stretch;
     width: 100%;
@@ -169,7 +169,7 @@ export const ContentCard = styled.div`
         font-weight: 500;
         font-style: normal;
         font-size: 3rem;
-        color: #a8735e;
+        color: ${props => props.theme.colors.titleColor};
         align-self: center;
     }
 `
@@ -213,7 +213,7 @@ export const WrapperImage = styled.div`
     gap: 2rem;
     strong{
         text-transform: uppercase;
-        color: #a8735e;
+        color: ${props => props.theme.colors.titleColor};
     }
     
 }

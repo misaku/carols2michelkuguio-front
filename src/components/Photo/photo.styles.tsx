@@ -10,6 +10,6 @@ export const PhotoWrapper = styled.div`
         width: 50vw;
         height: 50vh;
         object-fit: cover;
-        border-radius: 8px;
+        border-radius: ${props => props.theme.measures.borderMaxRadius};
     }
 `

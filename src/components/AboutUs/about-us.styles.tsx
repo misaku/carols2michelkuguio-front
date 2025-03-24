@@ -1,6 +1,7 @@
 import styled, {css} from 'styled-components';
 import flower from '../../assets/flower-large.svg'
 import {CardProps, WrapperCardProps} from "./about-us.types.tsx";
+import {device} from "../../App.theme.ts";
 
 export const MontserratTitle = styled.h1`
     font-family: "Montserrat", "Open Sans", "Raleway", serif;
@@ -30,6 +31,7 @@ export const Container = styled.section`
     gap: 2rem;
     text-align: justify;
     align-items: center;
+
 `
 
 export const WrapperCard = styled.section<WrapperCardProps>`
@@ -39,6 +41,13 @@ export const WrapperCard = styled.section<WrapperCardProps>`
     align-items: flex-start;
     justify-content: flex-start;
     position: relative;
+    padding-top: 60px;
+    ${props => props.invert && css`
+        padding-top: 0px;
+        padding-bottom: 60px;
+        align-items: flex-end;
+        justify-content: flex-end;
+    `}
 
     &::before {
         content: "";
@@ -62,6 +71,22 @@ export const WrapperCard = styled.section<WrapperCardProps>`
             top: auto;
             transform: scaleX(-1) rotate(285deg);
         `} //filter: invert(7%) sepia(41%) saturate(237%) hue-rotate(-395deg) brightness(80%) contrast(90%)
+    }
+    @media ${device.desktop} {
+    }
+    @media ${device.laptop} {
+    }
+    @media ${device.tablet} {
+        flex-direction: column;
+        padding-top: 0;
+        padding-bottom: 0;
+        &::before {
+        top: auto;
+        bottom: -12px;
+            }
+    }
+    @media ${device.mobile} {
+
     }
 `
 export const HorizontMarging = styled.div`
@@ -101,18 +126,39 @@ export const VerticalMarging = styled.div`
 
 export const Card = styled.div<CardProps>`
     padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border: 36px solid transparent;
     --offset: 12px;
     --border-size: 1px;
     position: relative;
-    right: -70px;
-    top: 80px;
+    max-width: 65%;
+    z-index: 2;
     aspect-ratio: 7/4.8;
-    ${props => props.invert && css`
-        right: auto;
-        left: -70px;
-        top: 0px;
-    `}
+    @media ${device.desktop} {
+        max-width: 70%;
+        aspect-ratio: 7/4;
+    }
+    @media ${device.laptop} {
+        aspect-ratio: 7/7;
+    }
+    @media ${device.tablet} {
+        aspect-ratio: auto;
+        max-width: 90%;
+        align-self: flex-end;
+        margin-top: -50px;
+        ${props => props.invert && css`
+            align-self: flex-start;
+        `}
+    }
+    @media ${device.mobile} {
+        width: 100%;
+        align-self: center;
+        aspect-ratio: auto;
+        margin-top: 0px;
+    }
     background-color: rgb(255, 255, 255);
     -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
     -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
@@ -138,25 +184,69 @@ export const Card = styled.div<CardProps>`
         border: inherit;
         box-sizing: border-box;
     }
-
-        // ${HorizontMarging},${VerticalMarging},${HorizontMarging}::before,${VerticalMarging}::before{
-    //     border-radius: 5px;
-    // }
+    
+    p,strong {
+        z-index: 2;
+    }
     
 `
 
-export const Image = styled.img`
+export const Image = styled.img<WrapperCardProps>`
     height: auto;
     width: 40%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
     object-fit: cover;
     aspect-ratio: 5 / 6;
     object-position: center top;
-    border: 32px solid rgb(255, 255, 255);
+    border: 20px solid rgb(255, 255, 255);
+    ${props => props.invert && css`
+        right: auto;
+        left: 0;
+        top: auto;
+        bottom: 0;
+        object-position: bottom;
+    `}
+    @media ${device.desktop} {
+    aspect-ratio: 6 / 6;
+    width: 42%;
+    }
+    @media ${device.laptop} {
+        aspect-ratio: 4 / 6.5;
+    }
+    @media ${device.tablet} {
+        aspect-ratio: 6 / 6;
+        width: 90%;
+        position: relative;
+        align-self: center;
+    }
+    @media ${device.mobile} {
+        
+    }
 `
 export const Wrapper = styled.div`
     height: auto;
-    max-width:100vw;
+    max-width: 100vw;
     overflow: hidden;
     padding-bottom: 30px;
+    @media ${device.desktop} {
+        //background-color: red;
+        padding: 3rem;
+
+    }
+    @media ${device.laptop} {
+        //background-color: #f1a447;
+    }
+    @media ${device.tablet} {
+        //background-color: #1050f1;
+    }
+    @media ${device.mobile} {
+        //background-color: #b700ff;
+    }
+
+
+
 `
 
