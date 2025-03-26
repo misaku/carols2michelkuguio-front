@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import {device} from "./App.theme.ts";
 
 export const GlobalStyle = createGlobalStyle`
     /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -66,11 +67,12 @@ export const GlobalStyle = createGlobalStyle`
 
     html {
         font-size: 62.5%; /* Now 10px = 1rem! */
+        @media ${device.mobile} {
+            font-size: 55.5%;
+        }
     }
 
     body {
-        font-size: 16px;
-        font-size: 1.6rem;
         line-height: 1.5;
         -webkit-font-smoothing: antialiased;
         min-height: 100%;

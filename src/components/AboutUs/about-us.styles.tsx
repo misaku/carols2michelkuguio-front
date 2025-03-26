@@ -11,6 +11,9 @@ export const MontserratTitle = styled.h1`
     font-size: 3rem;
     color: #a8735e;
     align-self: center;
+    // @media ${device.mobile} {
+    //     font-size: 2.7rem;
+    // }
 `
 export const MontserratP = styled.p`
     font-family: "Montserrat", "Open Sans", "Raleway", serif;
@@ -21,6 +24,9 @@ export const MontserratP = styled.p`
     color: #9f9693;
     align-items: stretch;
     width: 100%;
+    // @media ${device.mobile} {
+    //     font-size: 1.8rem;
+    // }
 `
 
 export const Container = styled.section`
@@ -146,7 +152,7 @@ export const Card = styled.div<CardProps>`
     }
     @media ${device.tablet} {
         aspect-ratio: auto;
-        max-width: 90%;
+        max-width: 100%;
         align-self: flex-end;
         margin-top: -50px;
         ${props => props.invert && css`
@@ -158,6 +164,8 @@ export const Card = styled.div<CardProps>`
         align-self: center;
         aspect-ratio: auto;
         margin-top: 0px;
+        padding: 2rem;
+        border: 30px solid transparent;
     }
     background-color: rgb(255, 255, 255);
     -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
