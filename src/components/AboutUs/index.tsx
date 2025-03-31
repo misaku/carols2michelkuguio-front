@@ -35,10 +35,9 @@ export function AboutUs() {
                     <HorizontMarging/>
                     <VerticalMarging/>
                     <MontserratTitle>Michel</MontserratTitle>
-                    <MontserratP> Michel tem uma energia que ilumina tudo ao seu redor. Seu jeito alegre e divertido contagia a todos, tornando qualquer momento mais leve e especial. Ele é um homem admirável, educado, inteligente, gentil e dono de um coração imenso.
-                        Ao lado dele, cada dia é repleto de boas conversas, risadas sinceras e gestos de carinho. Tive a sorte de encontrar na mesma pessoa amor, amizade, parceria verdadeira. Ele é o amor da minha vida 
+                    <MontserratP> Michel tem uma energia radiante, capaz de iluminar tudo ao seu redor. Seu jeito alegre e divertido contagia a todos, transformando qualquer momento em algo mais leve e especial. Ele é um homem inteligente, gentil e dono de um coração imenso.
 
-
+Ao seu lado, cada dia é preenchido com boas conversas, risadas sinceras e gestos de carinho. Tive a sorte de encontrar em uma única pessoa amor, amizade e companheirismo. Ele é, sem dúvida, o amor da minha vida
                     </MontserratP>
                 </Card>
 
@@ -49,7 +48,7 @@ export function AboutUs() {
                     <HorizontMarging/>
                     <VerticalMarging/>
                     <MontserratTitle>Carol</MontserratTitle>
-                    <MontserratP>A Carol é uma mulher incrível, doce e meiga, sempre cheia de energia, capaz de cativar a todos com sua alegria. Ela carrega a inocência de uma menina, mas também a força de uma guerreira. Sua inteligência, determinação e companheirismo tornam impossível não admirar essa mulher. Eu orei tanto a Deus para que ela existisse, e Ele me entregou esse presente precioso chamado Carolina!
+                    <MontserratP>A Carol é uma mulher incrível, doce e meiga, sempre cheia de energia, capaz de cativar a todos com sua alegria. Ela carrega a inocência de uma menina, mas também a força de uma guerreira. Sua inteligência, determinação e companheirismo tornam impossível não admirar essa mulher. Eu orei tanto a Deus para que ela existisse, e Ele me entregou esse presente precioso que é a Carol!
                     </MontserratP>
                 </Card>
 

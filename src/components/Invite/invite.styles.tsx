@@ -2,6 +2,8 @@ import styled, {css} from 'styled-components';
 import flower from '../../assets/flower-large.svg'
 import {CardProps, WrapperCardProps} from "./invite.types.tsx";
 
+import {device} from "../../App.theme.ts";
+
 
 export const Container = styled.section`
     max-width: 1200px;
@@ -11,6 +13,9 @@ export const Container = styled.section`
     gap: 2rem;
     text-align: justify;
     align-items: center;
+    @media ${device.mobile} {
+   
+    }
 `
 
 export const WrapperCard = styled.section<WrapperCardProps>`
@@ -91,7 +96,7 @@ export const VerticalMarging = styled.div`
 
 
 export const Card = styled.div<CardProps>`
-    padding: 4rem;
+    padding: 3rem;
     border: 36px solid transparent;
     --offset: 12px;
     --border-size: 1px;
@@ -103,6 +108,8 @@ export const Card = styled.div<CardProps>`
     -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
     -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
+
+
 
     ${HorizontMarging}, ${VerticalMarging} {
         position: absolute;
@@ -128,6 +135,11 @@ export const Card = styled.div<CardProps>`
         // ${HorizontMarging},${VerticalMarging},${HorizontMarging}::before,${VerticalMarging}::before{
     //     border-radius: 5px;
     // }
+
+    @media ${device.mobile} {
+        max-width: 420px
+        
+    }
     
 `
 export const Wrapper = styled.div`
@@ -159,7 +171,7 @@ export const ContentCard = styled.div`
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: ${props => props.theme.colors.defaultColor};
     text-align: justify;
     align-items: stretch;
@@ -172,6 +184,15 @@ export const ContentCard = styled.div`
         color: ${props => props.theme.colors.titleColor};
         align-self: center;
     }
+    @media ${device.mobile} {
+    
+     h1{
+        
+        font-size: 2rem;
+        
+    }
+        
+    }
 `
 export const ColorBox = styled.div`
     width: 40px;
@@ -183,6 +204,7 @@ export const ColorBox = styled.div`
 export const ColorPalettes = styled.div`
    display: flex;
     gap: 1rem;
+
 ;
 `
 
@@ -193,11 +215,28 @@ export const Image = styled.img`
     aspect-ratio: 5 / 6;
     object-position: center top;
     border-radius: 3px;
+    @media ${device.mobile} {
+    aspect-ratio: 7 / 6;
+    }
 `
 export const ContainerCard = styled.div`
     display: flex;
     gap: 2rem;
+
+    @media ${device.mobile} {
+    flex-direction: column ;
+    }
 `
+
+export const ContainerCard2 = styled.div`
+    display: flex;
+    gap: 2rem;
+
+    @media ${device.mobile} {
+    border: 18px solid transparent;
+    }
+`
+
 export const SectionCard = styled.section`
     display: flex;
     flex-direction: column;

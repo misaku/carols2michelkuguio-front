@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {device} from "../../App.theme.ts";
 
 export const CountdownSection = styled.div`
     display: flex;
@@ -45,6 +46,12 @@ export const CountdownWrapper = styled.div`
     justify-content: center;
     align-items: center;
     z-index: 1;
+
+    @media ${device.mobile} {
+    
+        gap: 1.5rem
+    
+        }
 `;
 
 export const Title = styled.h2`

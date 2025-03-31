@@ -11,9 +11,9 @@ export const MontserratTitle = styled.h1`
     font-size: 3rem;
     color: #a8735e;
     align-self: center;
-    // @media ${device.mobile} {
-    //     font-size: 2.7rem;
-    // }
+    @media ${device.mobile} {
+         font-size: 2.2rem;
+     }
 `
 export const MontserratP = styled.p`
     font-family: "Montserrat", "Open Sans", "Raleway", serif;
@@ -24,9 +24,9 @@ export const MontserratP = styled.p`
     color: #9f9693;
     align-items: stretch;
     width: 100%;
-    // @media ${device.mobile} {
-    //     font-size: 1.8rem;
-    // }
+    @media ${device.mobile} {
+        font-size: 1.8rem;
+     }
 `
 
 export const Container = styled.section`

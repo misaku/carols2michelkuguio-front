@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import minhaFoto from '../../assets/groom-putting-ring-bride-s-finger.jpg'
 import flower from '../../assets/flower-small.svg'
+import {device} from "../../App.theme.ts";
 
 
 export const HeaderWrapper = styled.header`
@@ -120,6 +121,14 @@ export const HeaderText = styled.div`
         vertical-align: middle;
         padding-right: 0.8rem;
     }
+    
+    @media ${device.mobile} {
+
+    strong {
+        font-size: 8rem;
+    }
+
+    }
 `;
 
 
@@ -175,5 +184,12 @@ export const WrapperContent = styled.div`
         -ms-transform: rotate(-130deg);
         -o-transform: rotate(-130deg);
         filter: invert(24%) sepia(93%) saturate(610%) hue-rotate(-56deg) brightness(92%) contrast(87%);
+    }
+
+    @media ${device.mobile} {
+
+    padding: 5rem 9rem;
+    position: relative;;
+
     }
 `

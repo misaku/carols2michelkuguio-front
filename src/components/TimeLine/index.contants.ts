@@ -10,6 +10,7 @@ import barrinha from '../../assets/barrinha.jpg'
 import cachoeira from '../../assets/cachoeira.jpg'
 import natal from '../../assets/natal.jpg'
 import noivado from '../../assets/noivado.jpg'
+import santa_rita from '../../assets/santa_rita.jpg'
 
 interface TimeLineItem {
     title: string;
@@ -90,5 +91,11 @@ export const TIME_LINE_ITEMS: TimeLineItem[] = [
         description: 'Visitamos Barrinha, uma cidade encantadora no interior de São Paulo, fomos em um pesqueiro, conhecemos o rio mogi guaçu de barco foi uma experiência bem legal.',
         date: '08/03/2025',
         image: barrinha
+    },
+    {
+        title: 'Santa Rita do Passa Quatro',
+        description: 'Visitamos Santa Rita e vimos a maior árvore do estado de São Paulo',
+        date: '30/03/2025',
+        image: santa_rita
     },
 ]

@@ -1,7 +1,7 @@
 import {
     Button,
     Card, ColorBox, ColorPalettes,
-    Container, ContentCard, ContainerCard, SectionCard,
+    Container, ContentCard, ContainerCard, SectionCard, ContainerCard2,
     HorizontMarging,
     VerticalMarging,
     Wrapper,
@@ -32,14 +32,15 @@ export const Invite: React.FC<InvitationProps> = ({type, name}) => {
                                     nosso <strong>Padrinho</strong>.
                                     Sua presença será essencial para tornar esse momento ainda mais especial. 🥂
                                 </p>
-                                <p>
-                                    <strong>Traje e Paleta de Cores:</strong>
-                                    <br/>
-                                    - Terno Cinza Claro e Sem Gravata
-                                </p>
                                 {element}
+                                <p>
+                                    
+                                 Terno Cinza Claro e Sem Gravata
+                                </p>
+                                
                             </SectionCard>
                             <WrapperImage>
+                               
                                 <strong>Paleta de cores</strong>
                                 <ColorPalettes>
                                     <ColorBox color={'#e9ecef'}/>
@@ -73,14 +74,10 @@ export const Invite: React.FC<InvitationProps> = ({type, name}) => {
                             {element}
                             <p>
                                 <strong>Vestimenta e Paleta de Cores:</strong>
-                                <br/>
-                                - Vestido Longo: [Informe a cor escolhida, ex: Rosa Chá]
-                                <br/>
-                                - Acessórios: Tonalidades leves e elegantes
+                               
                             </p>
                         </SectionCard>
                         <WrapperImage>
-                            <strong>Paleta de cores</strong>
                             <ColorPalettes>
                                 <ColorBox color={'rgb(250,225,221)'}/>
                                 <ColorBox color={'rgb(250,227,228)'}/>
@@ -99,7 +96,8 @@ export const Invite: React.FC<InvitationProps> = ({type, name}) => {
 
                 );
             default: // Convidado normal
-                return (<>
+                return (
+                        <SectionCard>
                         <p>
                             Querido(a) <strong>{name}</strong>,<br/>
                             É com imensa alegria que convidamos você para celebrar conosco esse dia tão especial! Sua
@@ -107,7 +105,8 @@ export const Invite: React.FC<InvitationProps> = ({type, name}) => {
                             presente muito importante para nós.
                         </p>
                         {element}
-                    </>
+                        </SectionCard>
+                        
 
                 );
         }
