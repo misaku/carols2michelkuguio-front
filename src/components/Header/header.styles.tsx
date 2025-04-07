@@ -1,11 +1,13 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 
 import minhaFoto from '../../assets/groom-putting-ring-bride-s-finger.jpg'
 import flower from '../../assets/flower-small.svg'
 import {device} from "../../App.theme.ts";
 
-
-export const HeaderWrapper = styled.header`
+interface HeaderWrapperProps {
+    menuIsOpen?: boolean;
+}
+export const HeaderWrapper = styled.header<HeaderWrapperProps>`
     display: flex;
     position: relative;
     flex-direction: column;
@@ -19,7 +21,12 @@ export const HeaderWrapper = styled.header`
     justify-content: flex-start;
     padding-bottom: 15rem;
     overflow: hidden;
-
+    @media ${device.mobile} {
+        ${({menuIsOpen}) => (menuIsOpen && css`
+            padding-top: 450px;
+            height: calc(100vh + 450px);
+        `)}
+    }
     &::before {
         content: "";
         position: absolute;
@@ -51,42 +58,138 @@ export const HeaderWrapper = styled.header`
 
 `;
 
-export const WrapperNavBar = styled.div`
+export interface WrapperNavBarProps {
+    isScrolled?: boolean;
+}
+
+export const WrapperNavBar = styled.div<WrapperNavBarProps>`
     width: 100%;
-    height: 6rem; 
-    position: absolute;
+    min-height: 6rem;
     display: block;
     top: 0;
+    position: fixed;
+    z-index: 999;
+    @media ${device.mobile} {
+        ${({isScrolled, theme}) => (!isScrolled && css`
+        background-color: rgba(0, 0, 0, 0.08);
+        color: ${theme.colors.titleColor};
+    `)}
+    }
+    ${({isScrolled, theme}) => (isScrolled && css`
+        -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
+        -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
+        background-color: ${theme.colors.colorWhite}; /* Altera a cor com base no estado */
+        color: ${theme.colors.titleColor};
+    `)}
+    transition: background-color 0.3s ease, color 0.3s ease;
+    
 `;
-
-export const NavBar = styled.nav`
+export interface NavBarProps {
+    isScrolled?: boolean;
+    isOpen?: boolean;
+}
+export const NavBar = styled.nav<NavBarProps>`
     width: 100%;
     flex: 1;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+
     ul {
         display: flex;
-        gap: 1.6rem;
+        flex-direction: row;
         list-style: none;
+        height: 100%;
+
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            min-height: 6rem;
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+
+            a {
+                display: flex;
+                flex: 1;
+                padding: 2rem;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                font-family: "Montserrat", "Open Sans", "Raleway", serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;
+                color: ${props => props.theme.colors.colorWhite};
+                font-size: 1.4rem;
+                height: 1.4rem;
+                line-height: 1.4rem;
+                text-transform: uppercase;
+                ${({isScrolled, theme}) => (isScrolled && css` /* Altera a cor com base no estado */
+                    color: ${theme.colors.defaultColor};
+                `)}
+                transition: color 0.3s ease;
+
+            }
+
+            &.active {
+                background-color: ${({isScrolled, theme}) => (isScrolled ? theme.colors.titleColor : '#fff')};
+
+                a {
+                    color: ${({isScrolled, theme}) => (isScrolled ? '#fff' : theme.colors.titleColor)};
+                }
+            }
+        }
+
+
     }
 
-    a {
-        text-decoration: none;
-        font-family: "Montserrat", "Open Sans", "Raleway", serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-        color: ${props => props.theme.colors.colorWhite};
-        font-size: 1.4rem;
-        height: 1.4rem;
-        line-height: 1.4rem;
-        text-transform: uppercase;
+
+    @media ${device.mobile} {
+        ${({isOpen}) => (!isOpen && css`
+            visibility: hidden;
+            display: none;
+        `)}
+        ul {
+            flex-direction: column;
+            align-self: stretch;
+            display: flex;
+            flex: 1;
+
+            li {
+                align-self: stretch;
+            }
+        }
+
+
     }
 `;
 
-
+export const WrapperIcon = styled.div`
+    display: none;
+    visibility: hidden;
+    flex: 1;
+    aspect-ratio: 1;
+    max-height: 5rem;
+    margin: 0.5rem;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #fff;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    @media ${device.mobile} {
+        display: flex;
+        visibility: visible;
+    }
+`
 export const HeaderText = styled.div`
     font-family: "Great Vibes", serif;
     display: flex;
@@ -101,6 +204,7 @@ export const HeaderText = styled.div`
     padding: 0;
     margin: 0;
     text-shadow: 0px 0px 100px #1e0000;
+
     strong {
         display: block;
         font-size: 10rem;
@@ -111,6 +215,7 @@ export const HeaderText = styled.div`
         vertical-align: middle;
         padding-right: 1.6rem;
     }
+
     span {
         display: block;
         font-size: 4rem;
@@ -121,12 +226,12 @@ export const HeaderText = styled.div`
         vertical-align: middle;
         padding-right: 0.8rem;
     }
-    
+
     @media ${device.mobile} {
 
-    strong {
-        font-size: 8rem;
-    }
+        strong {
+            font-size: 8rem;
+        }
 
     }
 `;
@@ -188,8 +293,8 @@ export const WrapperContent = styled.div`
 
     @media ${device.mobile} {
 
-    padding: 5rem 9rem;
-    position: relative;;
+        padding: 5rem 9rem;
+        position: relative;;
 
     }
 `

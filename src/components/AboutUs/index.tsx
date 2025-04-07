@@ -15,7 +15,7 @@ import noivo from '../../assets/noivo.jpg'
 
 export function AboutUs() {
     return (
-<Wrapper>
+<Wrapper id={"quem-somos"}>
         <Container>
             <MontserratTitle>Ele perguntou e ela disse sim!</MontserratTitle>
             <MontserratP>Em meio ao perfume das flores de Holambra, sob um céu pintado pelo pôr do sol, entre campos

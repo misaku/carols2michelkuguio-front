@@ -10,11 +10,12 @@ import {
 interface ContainerSubHeaderProps {
     invert?: boolean
     title: string
+    id:string;
 }
-export const SubHeader:React.FC<ContainerSubHeaderProps> = ({title, invert=false}) => {
+export const SubHeader:React.FC<ContainerSubHeaderProps> = ({title, invert=false, id}) => {
     return (
 
-        <HeaderWrapper>
+        <HeaderWrapper id={id}>
             <ContainerSubHeader invert={invert}>
                 <ContentHeader>
                     <WrapperContent>

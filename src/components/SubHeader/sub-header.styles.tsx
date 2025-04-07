@@ -13,7 +13,7 @@ export const HeaderWrapper = styled.header`
     background-position: bottom;
     background-repeat: no-repeat;
     width: 100%;
-    height: 40rem; /* O header ocupa 30% da tela */
+    height: 40rem;
     justify-content: flex-start;
     overflow: hidden;
     z-index: -2;
@@ -31,7 +31,6 @@ export const HeaderWrapper = styled.header`
         opacity: 0.5;
         filter: blur(1px)
     }
-    
 }
 `;
 interface ContainerSubHeaderProps {
@@ -44,8 +43,8 @@ export const ContainerSubHeader = styled.div<ContainerSubHeaderProps>`
     &::before {
         content: "";
         position: absolute;
-        left: 0;
-        top: 0;
+        left: 0px;
+        top: 0px;
         z-index: 0;
         width: 0;
         height: 0;
@@ -62,13 +61,13 @@ export const ContainerSubHeader = styled.div<ContainerSubHeaderProps>`
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 130px 0 0 100vw;
+        border-width: 130px 0 0 105vw;
         border-color: transparent transparent transparent #fff;
         
     }
     ${({invert}) => invert && css`
         &::before {
-            border-width: 130px 0 0 100vw;
+            border-width: 130px 0 0 105vw;
             border-color: #fff transparent transparent transparent;
         }
         &::after {

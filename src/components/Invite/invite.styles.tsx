@@ -22,10 +22,11 @@ export const WrapperCard = styled.section<WrapperCardProps>`
     display: flex;
     flex-direction: row;
     text-align: justify;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     position: relative;
-
+    flex: 1;
+    
     &::before {
         content: "";
         width: 400px;
@@ -109,8 +110,6 @@ export const Card = styled.div<CardProps>`
     -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
 
-
-
     ${HorizontMarging}, ${VerticalMarging} {
         position: absolute;
         top: var(--horizontal-offset, 0);
@@ -132,23 +131,21 @@ export const Card = styled.div<CardProps>`
         box-sizing: border-box;
     }
 
-        // ${HorizontMarging},${VerticalMarging},${HorizontMarging}::before,${VerticalMarging}::before{
-    //     border-radius: 5px;
-    // }
-
-    @media ${device.mobile} {
-        max-width: 420px
-        
+    @media ${device.tablet} {
+        max-width: 100%;
+        border: 30px solid transparent;
     }
-    
+
 `
 export const Wrapper = styled.div`
     height: auto;
     max-width:100vw;
     overflow: hidden;
-    padding: 70px;
-    padding-bottom: 300px;
-    padding-top: 94px;
+    padding:  94px 70px 300px 70px;
+    @media ${device.tablet} {
+        max-width: 100%;
+        padding:  94px 40px 94px 40px;
+    }
 `
 export const Button = styled.button`
     margin-top: 4rem;
@@ -177,26 +174,32 @@ export const ContentCard = styled.div`
     align-items: stretch;
     width: 100%;
     gap: 2rem;
-    h1{
+
+    h1 {
         font-weight: 500;
         font-style: normal;
         font-size: 3rem;
         color: ${props => props.theme.colors.titleColor};
         align-self: center;
     }
+
     @media ${device.mobile} {
-    
-     h1{
+
+        h1 {
         
-        font-size: 2rem;
-        
-    }
-        
+            font-size: 2rem;
+
+        }
+
     }
 `
 export const ColorBox = styled.div`
     width: 40px;
     height: 40px;
+    @media ${device.mobile} {
+        width: 26px;
+        height: 26px;
+    }
     border-radius: 3px;
     background-color: ${props => props.color};
 ;
@@ -217,14 +220,33 @@ export const Image = styled.img`
     border-radius: 3px;
     @media ${device.mobile} {
     aspect-ratio: 7 / 6;
+        max-width: 234px;
     }
 `
-export const ContainerCard = styled.div`
+interface ContainerCardProps {
+    both?: boolean;
+}
+export const ContainerCard = styled.div<ContainerCardProps>`
     display: flex;
     gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    ${props => props.both && css`
+        flex-direction: column ;
+    `}
+    @media ${device.tablet} {
+        flex-direction: column ;
+    }
+`
+export const ContainerImageCard = styled.div`
+    display: flex;
+    gap: 2rem;
+    align-self: stretch;
+    align-items: center;
+    justify-content: center;
+    @media ${device.tablet} {
+        flex-direction: column ;
 
-    @media ${device.mobile} {
-    flex-direction: column ;
     }
 `
 
@@ -254,6 +276,8 @@ export const WrapperImage = styled.div`
         text-transform: uppercase;
         color: ${props => props.theme.colors.titleColor};
     }
+    align-items: center;
+    justify-content: center;
     
 }
 `
