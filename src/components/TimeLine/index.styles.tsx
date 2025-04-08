@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 import {device} from "../../App.theme.ts";
 
@@ -83,7 +83,10 @@ export const Content = styled.div`
         }
     }
 `
-export const Container = styled.section`
+interface ContainerProps {
+    isEven?: boolean;
+}
+export const Container = styled.section<ContainerProps>`
     display: flex;
     position: relative;
     flex-direction: row;
@@ -100,8 +103,7 @@ export const Container = styled.section`
             border: none;
         }
     }
-
-    &&:nth-child(2n) {
+    ${({isEven}) => (isEven && css`
         flex-direction: row-reverse;
         @media ${device.tablet} {
             flex-direction: column-reverse;
@@ -131,8 +133,7 @@ export const Container = styled.section`
                 border: none;
             }
         }
-
-    }
+    `)}
     @media ${device.tablet} {
         flex-direction: column-reverse;
         justify-content: center;

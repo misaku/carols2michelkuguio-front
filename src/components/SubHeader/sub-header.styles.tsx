@@ -1,9 +1,11 @@
 import styled, {css} from 'styled-components'
 
-import minhaFoto from '../../assets/groom-putting-ring-bride-s-finger.jpg'
+import minhaFoto from '../../assets/flowb.jpeg'
 import flower from '../../assets/flower-small.svg'
+import {ParallaxBanner} from "react-scroll-parallax";
 
-export const HeaderWrapper = styled.header`
+
+export const HeaderWrapper = styled(ParallaxBanner)`
     display: flex;
     position: relative;
     flex-direction: column;
@@ -17,22 +19,19 @@ export const HeaderWrapper = styled.header`
     justify-content: flex-start;
     overflow: hidden;
     z-index: -2;
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    &>div:first-child {
         z-index: 0; /* Mantém esse pseudo-elemento atrás do conteúdo */
-        background-size: cover;
-        background-position: center;
-        background-image: linear-gradient(rgba(77, 48, 26, 0.5), rgba(85, 85, 85, 0.8)), url(${minhaFoto}); /* Adiciona o gradiente com a imagem */
-        opacity: 0.5;
-        filter: blur(1px)
+        background-image: linear-gradient(rgba(77, 48, 26, 0.5), rgba(85, 85, 85, 0.8)), url(${minhaFoto}) !important; /* Adiciona o gradiente com a imagem */
+        opacity: 0.8;
+        filter: blur(1px);
+        transform: rotate(9deg); 
+
+
     }
 }
 `;
+
+
 interface ContainerSubHeaderProps {
     invert?: boolean
 }

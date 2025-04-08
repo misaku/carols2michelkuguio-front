@@ -23,8 +23,8 @@ export const HeaderWrapper = styled.header<HeaderWrapperProps>`
     overflow: hidden;
     @media ${device.mobile} {
         ${({menuIsOpen}) => (menuIsOpen && css`
-            padding-top: 450px;
-            height: calc(100vh + 450px);
+            padding-top: 300px;
+            height: calc(100vh + 200px);
         `)}
     }
     &::before {
@@ -169,18 +169,33 @@ export const NavBar = styled.nav<NavBarProps>`
     }
 `;
 
-export const WrapperIcon = styled.div`
+export const MobileHeader = styled.div`
     display: none;
     visibility: hidden;
     flex: 1;
-    aspect-ratio: 1;
-    max-height: 5rem;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    @media ${device.mobile} {
+        display: flex;
+        visibility: visible;
+    }
+`
+interface WrapperIconProps {
+    isScrolled?: boolean;
+}
+export const WrapperIcon = styled.div<WrapperIconProps>`
+    display: none;
+    visibility: hidden;
+    height: 5rem;
+    width: 5rem;
     margin: 0.5rem;
     border-radius: 100%;
     align-items: center;
     justify-content: center;
     font-size: 4rem;
     color: #fff;
+    color: ${({isScrolled, theme})=>isScrolled?theme.colors.titleColor:theme.colors.colorWhite};
     &:hover {
         cursor: pointer;
         background-color: rgba(0, 0, 0, 0.05);

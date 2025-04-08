@@ -2,15 +2,16 @@ import {TimeLeft} from "../TimeLeft";
 import {
     ContentHeader,
     HeaderText,
-    HeaderWrapper,
+    HeaderWrapper, MobileHeader,
     NavBar,
     WrapperContent,
     WrapperIcon,
     WrapperNavBar
 } from "./header.styles.tsx";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {Link} from "react-router";
-import { IoIosMenu } from "react-icons/io";
+import {IoIosMenu, IoIosClose} from "react-icons/io";
+
 export const Header = () => {
     const targetDate = "2025-09-27T17:00:00Z";
     const [isScrolled, setIsScrolled] = useState(false);
@@ -75,43 +76,50 @@ export const Header = () => {
         };
     }, [sections]);
 
-    return (
-        <>
-            <HeaderWrapper id={'home'} menuIsOpen={isOpen}>
-                <WrapperNavBar isScrolled={isScrolled}>
-                    <WrapperIcon onClick={changeOpen}><IoIosMenu/></WrapperIcon>
-                    <NavBar isScrolled={isScrolled} isOpen={isOpen}>
-                        <ul>
-                            <li className={activeSection === "home" ? "active" : ""}>
-                                <Link to="/">Home</Link>
-                            </li>
-                            <li className={activeSection === "quem-somos" ? "active" : ""}>
-                                <Link to="/quem-somos">Quem Somos</Link>
-                            </li>
-                            <li className={activeSection === "nossa-historia" ? "active" : ""}>
-                                <Link to="/nossa-historia">Nossa História</Link>
-                            </li>
-                            <li className={activeSection === "confirmacao" ? "active" : ""}>
-                                <Link to="/confirmacao">Confirmação</Link>
-                            </li>
-                            <li>
-                                <Link to="/presenteie-os-noivos">Presenteie os Noivos</Link> {/* Carrinho separado */}
-                            </li>
-                        </ul>
-                    </NavBar>
+    const activeClass = useCallback((baseAction: string) => {
+        return {
+            className:  activeSection === baseAction ? "active" : ""
+        }
+    },[activeSection])
 
-                </WrapperNavBar>
-                <ContentHeader>
-                    <WrapperContent>
-                        <HeaderText>
-                            <strong>Carol</strong>
-                            <span>&</span>
-                            <strong>Michel</strong>
-                        </HeaderText>
-                    </WrapperContent>
-                </ContentHeader>
-                <TimeLeft targetDate={targetDate}/>
-            </HeaderWrapper>
-        </>
+    return (
+
+        <HeaderWrapper id={'home'} menuIsOpen={isOpen}>
+            <WrapperNavBar isScrolled={isScrolled}>
+                <MobileHeader><WrapperIcon isScrolled={isScrolled} onClick={changeOpen}>{isOpen ? (<IoIosClose/>) : (
+                    <IoIosMenu/>)}</WrapperIcon></MobileHeader>
+                <NavBar isScrolled={isScrolled} isOpen={isOpen}>
+                    <ul>
+                        <li {...activeClass("home")}>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li {...activeClass("quem-somos")}>
+                            <Link to="/quem-somos">Quem Somos</Link>
+                        </li>
+                        <li {...activeClass("nossa-historia")}>
+                            <Link to="/nossa-historia">Nossa História</Link>
+                        </li>
+                        <li {...activeClass("confirmacao")}>
+                            <Link to="/confirmacao">Confirmação</Link>
+                        </li>
+                        <li {...activeClass("presenteie-os-noivos")}>
+                            <Link to="/presenteie-os-noivos">Presenteie os Noivos</Link> {/* Carrinho separado */}
+                        </li>
+                    </ul>
+                </NavBar>
+
+            </WrapperNavBar>
+            <ContentHeader>
+                <WrapperContent>
+                    <HeaderText>
+                        <strong>Carol</strong>
+                        <span>&</span>
+                        <strong>Michel</strong>
+                    </HeaderText>
+                </WrapperContent>
+            </ContentHeader>
+            <TimeLeft targetDate={targetDate}/>
+        </HeaderWrapper>
+
     );
 };

@@ -3,27 +3,28 @@ import {createRoot} from 'react-dom/client'
 import App from './App.tsx'
 import {BrowserRouter, Navigate, Route, Routes} from "react-router";
 import {SmoothScroll} from "./components/SmoothScrooll.tsx";
+import {ParallaxProvider} from "react-scroll-parallax";
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
+        <ParallaxProvider>
+            <BrowserRouter>
+                <SmoothScroll>
+                    <Routes>
 
-        <BrowserRouter>
-            <SmoothScroll>
-                <Routes>
 
+                        <Route path="/*" element={<App/>}/>
 
-                    <Route path="/*" element={<App/>}/>
+                        {/*/!* Rotas separadas (exemplo: carrinho de compras) *!/*/}
+                        {/*<Route path="/presenteie-os-noivos" element={<Cart />} />*/}
 
-                    {/*/!* Rotas separadas (exemplo: carrinho de compras) *!/*/}
-                    {/*<Route path="/presenteie-os-noivos" element={<Cart />} />*/}
+                        {/* Rota padrão: redireciona para a home */}
+                        <Route path="*" element={<Navigate to="/"/>}/>
 
-                    {/* Rota padrão: redireciona para a home */}
-                    <Route path="*" element={<Navigate to="/"/>}/>
-
-                </Routes>
-            </SmoothScroll>
-        </BrowserRouter>
-
+                    </Routes>
+                </SmoothScroll>
+            </BrowserRouter>
+        </ParallaxProvider>
 
     </StrictMode>,
 )

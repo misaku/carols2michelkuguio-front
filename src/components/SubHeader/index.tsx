@@ -7,6 +7,7 @@ import {
     WrapperContent
 } from "./sub-header.styles.tsx";
 
+import minhaFoto from '../../assets/flowb.jpeg'
 interface ContainerSubHeaderProps {
     invert?: boolean
     title: string
@@ -14,8 +15,12 @@ interface ContainerSubHeaderProps {
 }
 export const SubHeader:React.FC<ContainerSubHeaderProps> = ({title, invert=false, id}) => {
     return (
-
-        <HeaderWrapper id={id}>
+        <HeaderWrapper id={id}  layers={[
+            {
+                image: minhaFoto,
+                speed: -20,
+            },
+        ]}>
             <ContainerSubHeader invert={invert}>
                 <ContentHeader>
                     <WrapperContent>
@@ -27,6 +32,8 @@ export const SubHeader:React.FC<ContainerSubHeaderProps> = ({title, invert=false
                 </ContentHeader>
             </ContainerSubHeader>
         </HeaderWrapper>
+
+
 
     );
 };

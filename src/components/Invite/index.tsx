@@ -1,17 +1,24 @@
 import {
     Button,
-    Card, ColorBox, ColorPalettes,
-    Container, ContentCard, ContainerCard, SectionCard, ContainerCard2,
+    Card,
+    ColorBox,
+    ColorPalettes,
+    Container,
+    ContainerCard,
+    ContainerImageCard,
+    ContentCard,
     HorizontMarging,
+    Image,
+    SectionCard,
     VerticalMarging,
     Wrapper,
     WrapperCard,
-    WrapperImage,
-    Image, ContainerImageCard
+    WrapperImage
 } from "./invite.styles.tsx";
 import * as React from "react";
 import padrinhos from "../../assets/padrinhos.jpg";
 import madrinhas from "../../assets/madrinhas.jpg";
+import {AnimatedComponent} from "../Animations";
 
 interface InvitationProps {
     type: 'madrinha_e_padrinho' | 'padrinho' | 'madrinha' | 'convidado';
@@ -177,31 +184,34 @@ export const Invite: React.FC<InvitationProps> = ({type, name}) => {
         <Wrapper>
             <Container>
                 <WrapperCard>
-                    <Card>
-                        <HorizontMarging/>
-                        <VerticalMarging/>
-                        <ContentCard>
-                            <h1>Estamos nos casando!</h1>
-                            {renderMessage(
-                                <>
-                                    <p>
-                                        Data: 27 de setembro de 2025<br/>
-                                        Local: Villaví - Recreio Internacional - Rua D 1550 - Ribeirao Preto-SP <br/>
-                                        Horário: 16:30
-                                    </p>
-                                    <p>Por favor, confirme sua presença até o dia !</p>
-                                    <p>
-                                        Com carinho, <strong>Michel dos Santos Kuguio</strong> & <strong>Carolina
-                                        Tavares de
-                                        Oliveira</strong>
-                                    </p>
-                                </>
-                            )}
+                    <AnimatedComponent animationType={'FadeInRightUp'}>
+                        <Card>
+                            <HorizontMarging/>
+                            <VerticalMarging/>
+                            <ContentCard>
+                                <h1>Estamos nos casando!</h1>
+                                {renderMessage(
+                                    <>
+                                        <p>
+                                            Data: 27 de setembro de 2025<br/>
+                                            Local: Villaví - Recreio Internacional - Rua D 1550 - Ribeirao Preto-SP <br/>
+                                            Horário: 16:30
+                                        </p>
+                                        <p>Por favor, confirme sua presença até o dia !</p>
+                                        <p>
+                                            Com carinho, <strong>Michel dos Santos Kuguio</strong> & <strong>Carolina
+                                            Tavares de
+                                            Oliveira</strong>
+                                        </p>
+                                    </>
+                                )}
 
 
-                            <Button>Confirmar</Button>
-                        </ContentCard>
-                    </Card>
+                                <Button>Confirmar</Button>
+                            </ContentCard>
+                        </Card>
+                    </AnimatedComponent>
+
                 </WrapperCard>
             </Container>
 
