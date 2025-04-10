@@ -46,7 +46,7 @@ export const CountdownWrapper = styled.div`
     justify-content: center;
     align-items: center;
     z-index: 1;
-
+    height: 12rem;
     @media ${device.mobile} {
     
         gap: 1.5rem

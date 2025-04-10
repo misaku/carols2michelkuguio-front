@@ -1,13 +1,67 @@
-import styled, {css} from 'styled-components'
+import styled, {css, keyframes} from 'styled-components'
 
 import minhaFoto from '../../assets/groom-putting-ring-bride-s-finger.jpg'
 import flower from '../../assets/flower-small.svg'
 import {device} from "../../App.theme.ts";
+import {ParallaxBanner} from "react-scroll-parallax";
+const slideFromLeft = keyframes`
+  from {
+    transform: translateX(-100%) rotate(-0deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(-130deg);
+    opacity: 0.5;
+  }
+`;
+
+const slideFromRight = keyframes`
+  from {
+    transform: translateX(100%) rotate(150deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(50deg);
+    opacity: 0.5;
+  }
+`;
+
+const slideToUp = keyframes`
+  from {
+    transform: translateY(50%) ;
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
+const slideToDown = keyframes`
+  from {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+const zoom = keyframes`
+  from {
+    transform: scale(0%) rotate(150deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(100%) rotate(0deg);
+    opacity: 1;
+  }
+`;
 
 interface HeaderWrapperProps {
     menuIsOpen?: boolean;
 }
-export const HeaderWrapper = styled.header<HeaderWrapperProps>`
+export const HeaderWrapper = styled(ParallaxBanner)<HeaderWrapperProps>`
     display: flex;
     position: relative;
     flex-direction: column;
@@ -27,17 +81,8 @@ export const HeaderWrapper = styled.header<HeaderWrapperProps>`
             height: calc(100vh + 200px);
         `)}
     }
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0; /* Mantém esse pseudo-elemento atrás do conteúdo */
-        background-size: cover;
-        background-position: center;
-        background-image: linear-gradient(rgba(77, 48, 26, 0.5), rgba(85, 85, 85, 0.8)), url(${minhaFoto}); /* Adiciona o gradiente com a imagem */
+    &>div:first-child {
+        background-image: linear-gradient(rgba(77, 48, 26, 0.5), rgba(85, 85, 85, 0.8)), url(${minhaFoto}) !important; /* Adiciona o gradiente com a imagem */
         opacity: 0.5;
         filter: blur(1px)
     }
@@ -220,6 +265,12 @@ export const HeaderText = styled.div`
     margin: 0;
     text-shadow: 0px 0px 100px #1e0000;
 
+    strong:first-child{
+                animation: ${slideToUp} 1.5s ease-out forwards;
+    }
+    strong:last-child{
+                animation: ${slideToDown} 1.5s ease-out forwards;
+    }
     strong {
         display: block;
         font-size: 10rem;
@@ -240,6 +291,7 @@ export const HeaderText = styled.div`
         text-align: center;
         vertical-align: middle;
         padding-right: 0.8rem;
+        animation: ${zoom} 1.5s ease-out forwards;
     }
 
     @media ${device.mobile} {
@@ -276,13 +328,15 @@ export const WrapperContent = styled.div`
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;
-        opacity: 0.5;
+        opacity: 0;
         transform: rotate(50deg);
         -webkit-transform: rotate(50deg);
         -moz-transform: rotate(50deg);
         -ms-transform: rotate(50deg);
         -o-transform: rotate(50deg);
         filter: invert(24%) sepia(93%) saturate(610%) hue-rotate(-56deg) brightness(92%) contrast(87%);
+        animation: ${slideFromRight} 1.5s ease-out forwards;
+
     }
 
     &::after {
@@ -304,6 +358,7 @@ export const WrapperContent = styled.div`
         -ms-transform: rotate(-130deg);
         -o-transform: rotate(-130deg);
         filter: invert(24%) sepia(93%) saturate(610%) hue-rotate(-56deg) brightness(92%) contrast(87%);
+        animation: ${slideFromLeft} 1.5s ease-out forwards;
     }
 
     @media ${device.mobile} {

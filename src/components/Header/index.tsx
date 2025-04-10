@@ -11,7 +11,7 @@ import {
 import {useCallback, useEffect, useState} from "react";
 import {Link} from "react-router";
 import {IoIosMenu, IoIosClose} from "react-icons/io";
-
+import minhaFoto from '../../assets/groom-putting-ring-bride-s-finger.jpg'
 export const Header = () => {
     const targetDate = "2025-09-27T17:00:00Z";
     const [isScrolled, setIsScrolled] = useState(false);
@@ -84,7 +84,12 @@ export const Header = () => {
 
     return (
 
-        <HeaderWrapper id={'home'} menuIsOpen={isOpen}>
+        <HeaderWrapper id={'home'} menuIsOpen={isOpen}  layers={[
+            {
+                image: minhaFoto,
+                speed: -30,
+            },
+        ]}>
             <WrapperNavBar isScrolled={isScrolled}>
                 <MobileHeader><WrapperIcon isScrolled={isScrolled} onClick={changeOpen}>{isOpen ? (<IoIosClose/>) : (
                     <IoIosMenu/>)}</WrapperIcon></MobileHeader>

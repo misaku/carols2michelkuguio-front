@@ -24,9 +24,7 @@ export const HeaderWrapper = styled(ParallaxBanner)`
         background-image: linear-gradient(rgba(77, 48, 26, 0.5), rgba(85, 85, 85, 0.8)), url(${minhaFoto}) !important; /* Adiciona o gradiente com a imagem */
         opacity: 0.8;
         filter: blur(1px);
-        transform: rotate(9deg); 
-
-
+        transform: rotate(9deg);
     }
 }
 `;
