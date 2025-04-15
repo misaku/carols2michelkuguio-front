@@ -32,8 +32,5 @@ export const SubHeader:React.FC<ContainerSubHeaderProps> = ({title, invert=false
                 </ContentHeader>
             </ContainerSubHeader>
         </HeaderWrapper>
-
-
-
     );
 };

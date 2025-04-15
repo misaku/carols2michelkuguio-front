@@ -266,10 +266,10 @@ export const HeaderText = styled.div`
     text-shadow: 0px 0px 100px #1e0000;
 
     strong:first-child{
-                animation: ${slideToUp} 1.5s ease-out forwards;
+                animation: ${slideToUp} 1.5s ease-in-out forwards;
     }
     strong:last-child{
-                animation: ${slideToDown} 1.5s ease-out forwards;
+                animation: ${slideToDown} 1.5s ease-in-out forwards;
     }
     strong {
         display: block;
@@ -291,7 +291,7 @@ export const HeaderText = styled.div`
         text-align: center;
         vertical-align: middle;
         padding-right: 0.8rem;
-        animation: ${zoom} 1.5s ease-out forwards;
+        animation: ${zoom} 1.5s ease-in-out forwards;
     }
 
     @media ${device.mobile} {
@@ -335,8 +335,7 @@ export const WrapperContent = styled.div`
         -ms-transform: rotate(50deg);
         -o-transform: rotate(50deg);
         filter: invert(24%) sepia(93%) saturate(610%) hue-rotate(-56deg) brightness(92%) contrast(87%);
-        animation: ${slideFromRight} 1.5s ease-out forwards;
-
+        animation: ${slideFromRight} 1.5s ease-in-out forwards;
     }
 
     &::after {
@@ -358,7 +357,7 @@ export const WrapperContent = styled.div`
         -ms-transform: rotate(-130deg);
         -o-transform: rotate(-130deg);
         filter: invert(24%) sepia(93%) saturate(610%) hue-rotate(-56deg) brightness(92%) contrast(87%);
-        animation: ${slideFromLeft} 1.5s ease-out forwards;
+        animation: ${slideFromLeft} 1.5s ease-in-out forwards;
     }
 
     @media ${device.mobile} {
@@ -366,5 +365,9 @@ export const WrapperContent = styled.div`
         padding: 5rem 9rem;
         position: relative;;
 
+        &::before , &::after {
+            width: 18rem;
+            height: 18rem;
+        }
     }
 `

@@ -1,5 +1,27 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import {device} from "../../App.theme.ts";
+
+const slideToUp = keyframes`
+  from {
+    transform: translateY(30%) ;
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
+const slideToDown = keyframes`
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
 
 export const CountdownSection = styled.div`
     display: flex;
@@ -47,6 +69,7 @@ export const CountdownWrapper = styled.div`
     align-items: center;
     z-index: 1;
     height: 12rem;
+    animation: ${slideToUp} 1.5s ease-in-out forwards;
     @media ${device.mobile} {
     
         gap: 1.5rem
@@ -64,4 +87,5 @@ export const Title = styled.h2`
     height: 2rem;
     line-height: 2rem;
     z-index: 1;
+    animation: ${slideToDown} 1.5s ease-in-out forwards;
 `

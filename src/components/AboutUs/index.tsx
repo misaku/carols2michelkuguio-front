@@ -34,7 +34,7 @@ export function AboutUs() {
             </MontserratP>
             <AnimatedComponent animationType={'FadeInLeft'}>
                 <WrapperCard>
-                    <Image src={noivo} alt={"sad"}/>
+                    <Image src={noivo} alt={"Michel dos Santos Kuguio"}/>
                     <Card>
                         <HorizontMarging/>
                         <VerticalMarging/>
@@ -49,7 +49,7 @@ export function AboutUs() {
             </AnimatedComponent>
             <AnimatedComponent animationType={'FadeInRight'} >
             <WrapperCard invert={true}>
-                <Image src={noiva} alt={"sad"} invert={true}/>
+                <Image src={noiva} alt={"Carolina Tavares Oliveira"} invert={true}/>
                 <Card invert={true}>
                     <HorizontMarging/>
                     <VerticalMarging/>
@@ -57,12 +57,9 @@ export function AboutUs() {
                     <MontserratP>A Carol é uma mulher incrível, doce e meiga, sempre cheia de energia, capaz de cativar a todos com sua alegria. Ela carrega a inocência de uma menina, mas também a força de uma guerreira. Sua inteligência, determinação e companheirismo tornam impossível não admirar essa mulher. Eu orei tanto a Deus para que ela existisse, e Ele me entregou esse presente precioso que é a Carol!
                     </MontserratP>
                 </Card>
-
             </WrapperCard>
             </AnimatedComponent>
         </Container>
-
 </Wrapper>
-
     )
 }

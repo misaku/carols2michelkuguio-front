@@ -160,6 +160,35 @@ export const Button = styled.button`
         background: #a0715e;
     }
 `
+export const Search = styled.div`
+    height: 50px;
+    border-radius: ${props => props.theme.measures.borderMaxRadius};
+    display: flex;
+    input{
+        border: solid 1px #f0f0f0;
+        border-bottom-left-radius: ${props => props.theme.measures.borderMaxRadius};
+        border-top-left-radius: ${props => props.theme.measures.borderMaxRadius};
+        flex: 1;
+        padding: 10px 20px;
+        &:active, &:focus{
+            outline: none;
+            border: ${props => `solid 1px ${props.theme.colors.titleColor}`}; 
+            color: ${props => props.theme.colors.titleColor};
+        }
+    }
+    button{
+        border: ${props => `solid 1px ${props.theme.colors.titleColor}`};
+        border-bottom-right-radius: ${props => props.theme.measures.borderMaxRadius};
+        border-top-right-radius: ${props => props.theme.measures.borderMaxRadius};
+        background-color: ${props => props.theme.colors.borderColor};
+        color: ${props => props.theme.colors.colorWhite};
+        padding: 10px 30px;
+        &:hover{
+            cursor: pointer;
+            background-color: ${props => props.theme.colors.titleColor};
+        }
+    }
+`
 export const ContentCard = styled.div`
     z-index: 2;
     display: flex;
@@ -247,15 +276,6 @@ export const ContainerImageCard = styled.div`
     @media ${device.tablet} {
         flex-direction: column ;
 
-    }
-`
-
-export const ContainerCard2 = styled.div`
-    display: flex;
-    gap: 2rem;
-
-    @media ${device.mobile} {
-    border: 18px solid transparent;
     }
 `
 

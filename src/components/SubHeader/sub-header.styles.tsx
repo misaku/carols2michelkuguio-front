@@ -19,7 +19,8 @@ export const HeaderWrapper = styled(ParallaxBanner)`
     justify-content: flex-start;
     overflow: hidden;
     z-index: -2;
-    &>div:first-child {
+
+    & > div:first-child {
         z-index: 0; /* Mantém esse pseudo-elemento atrás do conteúdo */
         background-image: linear-gradient(rgba(77, 48, 26, 0.5), rgba(85, 85, 85, 0.8)), url(${minhaFoto}) !important; /* Adiciona o gradiente com a imagem */
         opacity: 0.8;
@@ -33,6 +34,7 @@ export const HeaderWrapper = styled(ParallaxBanner)`
 interface ContainerSubHeaderProps {
     invert?: boolean
 }
+
 export const ContainerSubHeader = styled.div<ContainerSubHeaderProps>`
     display: flex;
     flex: 1;
@@ -49,6 +51,7 @@ export const ContainerSubHeader = styled.div<ContainerSubHeaderProps>`
         border-width: 130px 100vw 0 0;
         border-color: #fff transparent transparent transparent;
     }
+
     &::after {
         content: "";
         position: absolute;
@@ -60,16 +63,18 @@ export const ContainerSubHeader = styled.div<ContainerSubHeaderProps>`
         border-style: solid;
         border-width: 130px 0 0 105vw;
         border-color: transparent transparent transparent #fff;
-        
+
     }
+
     ${({invert}) => invert && css`
         &::before {
             border-width: 130px 0 0 105vw;
             border-color: #fff transparent transparent transparent;
         }
+
         &::after {
-        border-width: 130px 100vw 0 0;
-        border-color: transparent #fff  transparent transparent;
+            border-width: 130px 100vw 0 0;
+            border-color: transparent #fff transparent transparent;
         }
     `}
 `;
@@ -86,6 +91,7 @@ export const HeaderText = styled.div`
     padding: 0;
     margin: 0;
     text-shadow: 0px 0px 100px #1e0000;
+
     strong {
         display: block;
         font-size: 5rem;
@@ -95,6 +101,7 @@ export const HeaderText = styled.div`
         text-align: center;
         vertical-align: middle;
         padding-right: 0.6rem;
+
     }
 `;
 
@@ -123,6 +130,7 @@ export const Ring = styled.div`
     border-radius: 100%;
     display: flex;
     opacity: 0.5;
+
     &::before {
         content: "";
         height: 2rem;
@@ -150,7 +158,7 @@ export const Ring = styled.div`
         right: -1rem;
         //top: -0.2rem;
         top: 1rem;
-   
+
     }
 `
 export const Line = styled.div`
@@ -160,6 +168,7 @@ export const Line = styled.div`
     align-items: center;
     justify-content: center;
     gap: 2rem;
+
     &::before {
         content: "";
         background-image: url(${flower});
@@ -192,6 +201,6 @@ export const Line = styled.div`
         opacity: 0.5;
         transform: rotate(-31deg);
         filter: invert(24%) sepia(93%) saturate(610%) hue-rotate(-56deg) brightness(92%) contrast(87%);
-   
+
     }
 `

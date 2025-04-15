@@ -155,6 +155,7 @@ export const Wrapper = styled.div`
     height: auto;
     max-width: 1200px;
     margin: 0 auto;
+    overflow: hidden;
         // @media ${device.desktop} {
     // background-color: #f00;
     // }

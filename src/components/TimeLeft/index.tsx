@@ -21,21 +21,18 @@ export const TimeLeft: React.FC<TimeLeftProps> = ({targetDate}) => {
             <CountdownWrapper>
                 {!!timeLeft && (
                     <>
-                        <Column number={timeLeft.months} name={'Meses'}/>
+                        <Column number={timeLeft.months} name={'Meses'} />
                         <Divider/>
-                        <Column number={timeLeft.days} name={'Dias'}/>
+                        <Column number={timeLeft.days} name={'Dias'} />
                         <Divider/>
-                        <Column number={timeLeft.hours} name={'Horas'}/>
+                        <Column number={timeLeft.hours} name={'Horas'} />
                         <Divider/>
-                        <Column number={timeLeft.minutes} name={'Minutos'}/>
+                        <Column number={timeLeft.minutes} name={'Minutos'} />
                         <Divider/>
-                        <Column number={timeLeft.seconds} name={'Segundos'}/>
+                        <Column number={timeLeft.seconds} name={'Segundos'} />
                     </>
                 )}
-
-
             </CountdownWrapper>
-
         </>
     );
 };

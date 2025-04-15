@@ -6,25 +6,20 @@ import {SubHeader} from "./components/SubHeader";
 import TimeLine from "./components/TimeLine";
 import {Invite} from "./components/Invite";
 import {theme} from "./App.theme.ts";
-
+import { ToastContainer } from 'react-toastify';
 function App() {
 
     return (
-
             <ThemeProvider theme={theme}>
                 <GlobalStyle/>
+                <ToastContainer/>
                 <Header></Header>
                 <AboutUs />
                 <SubHeader title={'Nossa Historia'} id={'nossa-historia'} invert={false}/>
                 <TimeLine />
                 <SubHeader title={'Confirmação'} id={'confirmacao'} invert={true}/>
-                <Invite type={'padrinho'} name={'luan'} />
-                <Invite type={'madrinha'} name={'lurdes'} />
-                <Invite type={'madrinha_e_padrinho'} name={'Carol e Breno'} />
-                <Invite type={'convidado'} name={'gustavo e familia'} />
+                <Invite/>
             </ThemeProvider>
-
-
     )
 }
 
