@@ -280,15 +280,12 @@ export const Invite: React.FC = memo(() => {
                 return (
                     <SectionCard>
                         <p>
-                            Com as bênçãos de Deus e com muita alegria em nossos corações,
-                            convidamos <em>{responseData?.title}</em> e família para para celebrar conosco
-                            a união das nossas vidas.
-                            <br />
-                            <br />
-                            <b><strong>Carolina & Michel </strong> </b>
-                            <br />
-                            <br />
-                            desejam a sua presença para celebrar esse momento único, celebrando o amor, a amizade e o começo de uma nova jornada em suas vidas.
+                            Com as bênçãos do Senhor, que guiou nossos passos até aqui,
+                            compartilhamos a alegria de vivermos o início de uma nova etapa.
+                            convidamos <em>{responseData?.title}</em> e família  para testemunhar e celebrar a nossa união diante de Deus,
+                            em um momento de fé, amor e gratidão.
+
+                            Esperamos por sua presença nesse dia abençoado e inesquecível.
                         </p>
                         {element}
                     </SectionCard>
