@@ -326,7 +326,7 @@ export const Invite: React.FC = memo(() => {
                                             </p>
                                             <p>Por favor, confirme sua presença até o dia 27 de maio de 2025!</p>
                                             <p>
-                                                Com carinho, <strong>Michel dos Santos Kuguio </strong> & <strong>Carolina Tavares de Oliveira</strong>
+                                                Com carinho, <strong>Michel dos Santos Kuguio </strong> & <strong>Carolina Tavares de Oliveira.</strong>
                                             </p>
                                         </>
                                     )}
