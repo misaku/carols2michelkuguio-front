@@ -8,12 +8,12 @@ import {
     ContainerImageCard,
     ContentCard,
     HorizontMarging,
-    Image, Search,
+    Image, Label, Lottie, Search,
     SectionCard,
     VerticalMarging,
     Wrapper,
     WrapperCard,
-    WrapperImage
+    WrapperImage, WrapperLottie
 } from "./invite.styles.tsx";
 import * as React from "react";
 import padrinhos from "../../assets/padrinhos.jpg";
@@ -22,17 +22,54 @@ import {AnimatedComponent} from "../Animations";
 import {memo, useCallback, useState} from "react";
 import * as axios from "axios";
 import {api} from "../../service.ts";
+import jsonLotie from '../../assets/CM.json'
 
 interface InvitationProps {
     type: 'madrinha_e_padrinho' | 'padrinho' | 'madrinha' | 'convidado';
     name: string;
 }
+export interface ResponseProps {
+    id: number
+    title: string
+    confirmation?: boolean
+    expirationDate: string
+    users: User[]
+}
 
+export interface User {
+    id: number;
+    email: string;
+    name: string;
+    lastName: string;
+    phone: string;
+    inviteId: number;
+    honorId: number;
+    confirmation?: boolean
+    honor: Honor
+}
+
+export interface Honor {
+    id: number
+    title: string
+}
+
+
+export interface RequestUser {
+    id: number;
+    confirmation: boolean
+}
+
+export interface RequestProps {
+    confirmation: boolean
+    users?: RequestUser[]
+}
 
 export const Invite: React.FC = memo(() => {
     const [phone, setPhone] = useState("");
     const [inviteType, setInviteType] = useState<'madrinha_e_padrinho' | 'padrinho' | 'madrinha' | 'convidado'>();
-    const [responseData, setResponseData] = useState<any>();
+    const [responseData, setResponseData] = useState<ResponseProps>();
+    const [requestData, setRequestData] = useState<RequestProps>();
+    const [loading, setLoading] = useState<boolean>(false);
 
     const applyMask = useCallback((value: string) => {
         value = value.replace(/\D/g, ""); // Remove tudo que não é número
@@ -62,7 +99,9 @@ export const Invite: React.FC = memo(() => {
 
     const handleSearch = useCallback(async ()=>{
         if(phone){
+            setLoading(true);
             try {
+                await new Promise(resolve => setTimeout(resolve, 3000));
                 const response =  await api.get(`/invite/${phone}`)
                 const hasPadrinho = response.data.users.some((user?: { honor?: { title?: string; }; })=>user?.honor?.title?.toLowerCase() === 'padrinho')
                 const hasMadrinha = response.data.users.some((user?: { honor?: { title?: string; }; })=>user?.honor?.title?.toLowerCase() === 'madrinha')
@@ -76,17 +115,42 @@ export const Invite: React.FC = memo(() => {
                     setInviteType('convidado')
                 }
                 setResponseData(response.data)
-                console.log(
-                    response.data.users.map((user?: { honor?: { title?: string; }; })=>user?.honor?.title?.toLowerCase())
-                )
-                console.log({response});
             }catch (e) {
                 console.error(e);
+            } finally {
+                setLoading(false);
             }
 
         }
     },[phone])
 
+    const confirm = async ()=>{
+        const payload:RequestProps = {
+            confirmation: true,
+            users: responseData?.users.map(user=>({id:user.id, confirmation: true}))
+        }
+        const cuntHonors = responseData?.users.filter(user=>!!user.honor).length
+        if(cuntHonors == responseData?.users?.length){
+            const response =  await api.patch(`/invite/${responseData?.id}`,payload)
+            if(response){
+                setInviteType(undefined)
+                setResponseData(undefined)
+            }
+            return;
+        }
+        setRequestData(payload)
+    }
+    const recuse = async () =>{
+        const payload = {
+            confirmation: false,
+            users: responseData?.users.map(user=>({id:user.id, confirmation: false}))
+        }
+        const response =  await api.patch(`/invite/${responseData?.id}`,payload)
+        if(response){
+            setInviteType(undefined)
+            setResponseData(undefined)
+        }
+    }
     const renderMessage: (element: React.ReactElement) => React.ReactElement = (element) => {
         switch (inviteType) {
             case 'padrinho':
@@ -220,7 +284,7 @@ export const Invite: React.FC = memo(() => {
                 return (
                     <SectionCard>
                         <p>
-                            Querido(a) <strong>{name}</strong>,<br/>
+                            Querido(a) <strong>{responseData?.title}</strong>,<br/>
                             É com imensa alegria que convidamos você para celebrar conosco esse dia tão especial! Sua
                             presença é um
                             presente muito importante para nós.
@@ -242,13 +306,21 @@ export const Invite: React.FC = memo(() => {
                             <VerticalMarging/>
                             <ContentCard>
                                 <h1>Estamos nos casando!</h1>
-                                {!inviteType?(<><p>
+                                {loading&&(
+                                    <WrapperLottie>
+                                        <strong>Buscando convite </strong><Lottie animationData={jsonLotie} loop={true} />
+                                    </WrapperLottie>
+                                )}
+
+                                {!inviteType && !loading && !requestData &&(<><p>
                                     Digite seu número de telefone logo abaixo para localizar seu convite e confirmar sua presença! 😊
                                 </p>
                                 <Search>
-                                    <input value={phone} placeholder={'(00) 0 0000-0000'} maxLength={15} type={'tel'} maxLength={15} onChange={handleChange}/>
+                                    <input value={phone} placeholder={'(00) 0 0000-0000'} maxLength={15} type={'tel'}  onChange={handleChange}/>
                                     <button type={"button"} onClick={handleSearch}>Buscar</button>
-                                </Search></>):(<>
+                                </Search>
+                                </>)}
+                                {inviteType && !loading && !requestData &&(<>
                                     {renderMessage(
                                         <>
                                             <p>
@@ -266,9 +338,15 @@ export const Invite: React.FC = memo(() => {
                                     )}
 
 
-                                    <Button>Confirmar</Button>
+                                    <Button type={'button'} onClick={confirm}>Confirmar</Button><Button invert type={'button'} onClick={recuse}>Não posso ir</Button>
                                 </>)}
-
+                                {requestData && ( responseData?.users?.map(user=>(
+                                    <Label>
+                                        {user?.name}
+                                        <input type="checkbox" checked="checked"/>
+                                        <span className="checkmark"></span>
+                                    </Label>
+                                )))}
                             </ContentCard>
                         </Card>
                     </AnimatedComponent>

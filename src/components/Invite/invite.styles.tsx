@@ -1,10 +1,23 @@
 import styled, {css} from 'styled-components';
 import flower from '../../assets/flower-large.svg'
 import {CardProps, WrapperCardProps} from "./invite.types.tsx";
-
+import L from "lottie-react";
 import {device} from "../../App.theme.ts";
 
-
+export const WrapperLottie = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    height: 50px;
+`
+export const Lottie = styled(L)`
+    max-width: 100px;
+    position: absolute;
+    top: -12px;
+`
 export const Container = styled.section`
     max-width: 1200px;
     margin: 0 auto;
@@ -95,6 +108,81 @@ export const VerticalMarging = styled.div`
 
 `
 
+export const  Label = styled.label`
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: ${props => props.theme.colors.titleColor};
+    margin-bottom: 1rem;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding-left: 35px;
+    input{
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        &:checked ~ .checkmark {
+            background-color: ${props => props.theme.colors.borderColor};
+            &:after {
+                display: block !important;
+                left: 7px;
+                top: 3px;
+                width: 10px;
+                height: 15px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+    }
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        border-radius: 3px;
+        background-color: #eee;
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 7px;
+            top: 3px;
+            width: 10px;
+            height: 15px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            
+        }
+    }
+    &:hover input ~ .checkmark {
+        background-color: #ccc;
+        &:after {
+            display: block !important;
+            left: 7px;
+            top: 3px;
+            width: 10px;
+            height: 15px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+`
 
 export const Card = styled.div<CardProps>`
     padding: 3rem;
@@ -147,17 +235,20 @@ export const Wrapper = styled.div`
         padding:  94px 40px 94px 40px;
     }
 `
-export const Button = styled.button`
+interface ButtonProps {
+    invert?: boolean;
+}
+export const Button = styled.button<ButtonProps>`
     margin-top: 4rem;
     padding: 1rem;
-    background: ${props => props.theme.colors.borderColor};
-    color: ${props => props.theme.colors.colorWhite};
+    background: ${props =>props.invert? props.theme.colors.colorWhite: props.theme.colors.borderColor};
+    color: ${props =>props.invert? props.theme.colors.titleColor: props.theme.colors.colorWhite};
     font-weight: 400;
-    border: none;
+    border: solid 1px ${props =>props.invert? props.theme.colors.borderColor: props.theme.colors.titleColor};
     border-radius: 3px;
     cursor: pointer;
     &:hover{
-        background: #a0715e;
+        background: ${props =>props.invert? '#f4f4f4': '#a0715e'};
     }
 `
 export const Search = styled.div`
