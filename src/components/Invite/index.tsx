@@ -192,7 +192,7 @@ export const Invite: React.FC = memo(() => {
                         <SectionCard>
                             <p>
                                 Querida <strong>{responseData?.title}</strong>,<br/>
-                                É com muito prazer que convidamos você a ser nossa <strong>Madrinha</strong>. Sua luz, seu amor e sua presença especial certamente tornarão o nosso grande dia ainda mais inesquecivel. 💖
+                                É com muito prazer que convidamos você para ser nossa <strong>Madrinha</strong>. Sua luz, seu amor e sua presença especial certamente tornarão o nosso grande dia ainda mais inesquecivel. 💖
                             </p>
                             {element}
                             <p>
@@ -223,13 +223,11 @@ export const Invite: React.FC = memo(() => {
                         <SectionCard>
                             <p>
                                 Queridos <strong>{responseData?.title}</strong>,<br/>
-                                É com enorme carinho que queremos convidá-los para fazerem parte do nosso dia mais
-                                especial,
+                                É com enorme carinho que queremos convidá-los para fazerem parte do nosso grande dia
                                 não só como amigos queridos, mas como nossos <strong>Madrinha e Padrinho</strong>.
                             </p>
                             <p>
-                                Vocês são exemplo de amor, amizade e alegria em nossas vidas, e ter vocês ao nosso lado
-                                trará um brilho ainda maior para essa celebração tão significativa. 🥂💖
+                            A trajetória de vocês, marcada por companheirismo e amor, é uma inspiração para nós e tornará esse momento ainda mais especial.
                             </p>
                             {element}
                             <p>
@@ -326,7 +324,7 @@ export const Invite: React.FC = memo(() => {
                                                 Local: Villaví - Recreio Internacional - Rua D 1550 - Ribeirao Preto-SP <br/>
                                                 Horário: 16:30
                                             </p>
-                                            <p>Por favor, confirme sua presença até o dia !</p>
+                                            <p>Por favor, confirme sua presença até o dia 27 de maio de 2025!</p>
                                             <p>
                                                 Com carinho, <strong>Michel dos Santos Kuguio </strong> & <strong>Carolina Tavares de Oliveira</strong>
                                             </p>
