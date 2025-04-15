@@ -11,6 +11,7 @@ import cachoeira from '../../assets/cachoeira.jpg'
 import natal from '../../assets/natal.jpg'
 import noivado from '../../assets/noivado.jpg'
 import santa_rita from '../../assets/santa_rita.jpg'
+import pesca from '../../assets/pesca.jpg'
 
 interface TimeLineItem {
     title: string;
@@ -70,9 +71,15 @@ export const TIME_LINE_ITEMS: TimeLineItem[] = [
     },
     {
         title: 'Noivado',
-        description: 'Ele me pediu em casamento em Holambra, e eu disse sim. Foi um momento mágico e inesquecível, rodeado pela beleza única da cidade, com suas flores e clima acolhedor. A emoção foi indescritível, e a sensação de amor e cumplicidade tornou tudo ainda mais especial.',
+        description: 'Ele me pediu em casamento em Holambra, e eu disse sim. Foi um momento mágico e inesquecível, rodeado pela beleza única da cidade, com suas flores e clima acolhedor. A emoção foi indescritível.',
         date: '22/09/2024',
         image: noivado
+    },
+    {
+        title: 'Miguelópolis',
+        description: 'Fomos pescar tucunaré em Miguelópolis e vivemos um dia incrível no mato. O rio estava calmo, os peixes apareceram, e a emoção de cada puxada na linha foi de arrepiar.',
+        date: '26/10/2024',
+        image: pesca
     },
     {
         title: 'Natal',
@@ -94,7 +101,7 @@ export const TIME_LINE_ITEMS: TimeLineItem[] = [
     },
     {
         title: 'Santa Rita do Passa Quatro',
-        description: 'Visitamos Santa Rita e vimos a maior árvore do estado de São Paulo',
+        description: 'Visitamos Santa Rita do Passa Quatro e tivemos o privilégio de conhecer a maior árvore do estado de São Paulo, um jequitibá-rosa que fica localizado no parque estadual vassununga.',
         date: '30/03/2025',
         image: santa_rita
     },

@@ -22,15 +22,11 @@ export function AboutUs() {
             <MontserratTitle>
                 Ele perguntou e ela disse sim!
             </MontserratTitle>
-            <MontserratP>Em meio ao perfume das flores de Holambra, sob um céu pintado pelo pôr do sol, entre campos
-                que pareciam saídos de um sonho, ele fez uma das perguntas mais importantes de suas vidas.
+            <MontserratP>Em Holambra, com o pôr do sol se aproximando e cercados por campos de flores, ele fez uma das perguntas mais importantes de suas vidas.
             </MontserratP>
             <MontserratP>Com o coração acelerado e os olhos brilhando de emoção, ela sorriu... e disse sim! Um "sim"
                 que sela uma história que está sendo escrita com cumplicidade, carinho e um amor que a cada dia
-                cresce ainda mais. Agora, um novo capítulo começa, e que ele seja tão lindo quanto aquele dia cheio de
-                cores,
-                amor e promessas
-                eternas
+                cresce ainda mais. E agora, com a bênção de Deus, um novo capítulo dessa história começa..
             </MontserratP>
             <AnimatedComponent animationType={'FadeInLeft'}>
                 <WrapperCard>
@@ -41,7 +37,7 @@ export function AboutUs() {
                         <MontserratTitle>Michel</MontserratTitle>
                         <MontserratP> Michel tem uma energia radiante, capaz de iluminar tudo ao seu redor. Seu jeito alegre e divertido contagia a todos, transformando qualquer momento em algo mais leve e especial. Ele é um homem inteligente, gentil e dono de um coração imenso.
 
-                            Ao seu lado, cada dia é preenchido com boas conversas, risadas sinceras e gestos de carinho. Tive a sorte de encontrar em uma única pessoa amor, amizade e companheirismo. Ele é, sem dúvida, o amor da minha vida
+                            Ao seu lado, cada dia é preenchido com boas conversas, risadas sinceras e gestos de carinho. Tive a sorte de encontrar em uma única pessoa amor, amizade e companheirismo. É muito bom compartilhar a vida com você, te amo.
                         </MontserratP>
                     </Card>
 

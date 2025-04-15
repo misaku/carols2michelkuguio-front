@@ -192,15 +192,11 @@ export const Invite: React.FC = memo(() => {
                         <SectionCard>
                             <p>
                                 Querida <strong>{responseData?.title}</strong>,<br/>
-                                É com muito amor que convidamos você a ser nossa <strong>Madrinha</strong>. Sabemos que
-                                sua
-                                luz
-                                trará ainda
-                                mais encanto para o nosso grande dia! 💖
+                                É com muito prazer que convidamos você a ser nossa <strong>Madrinha</strong>. Sua luz, seu amor e sua presença especial certamente tornarão o nosso grande dia ainda mais inesquecivel. 💖
                             </p>
                             {element}
                             <p>
-                                <strong>Vestido Longo Rosa Claro:</strong>
+                                <strong>Vestido Longo Rosa Claro</strong>
                             </p>
                         </SectionCard>
                         <WrapperImage>
@@ -284,10 +280,15 @@ export const Invite: React.FC = memo(() => {
                 return (
                     <SectionCard>
                         <p>
-                            Querido(a) <strong>{responseData?.title}</strong>,<br/>
-                            É com imensa alegria que convidamos você para celebrar conosco esse dia tão especial! Sua
-                            presença é um
-                            presente muito importante para nós.
+                            Com as bênçãos de Deus e com muita alegria em nossos corações,
+                            convidamos <em>{responseData?.title}</em> e família para para celebrar conosco
+                            a união das nossas vidas.
+                            <br />
+                            <br />
+                            <b><strong>Carolina & Michel </strong> </b>
+                            <br />
+                            <br />
+                            desejam a sua presença para celebrar esse momento único, celebrando o amor, a amizade e o começo de uma nova jornada em suas vidas.
                         </p>
                         {element}
                     </SectionCard>
@@ -330,9 +331,7 @@ export const Invite: React.FC = memo(() => {
                                             </p>
                                             <p>Por favor, confirme sua presença até o dia !</p>
                                             <p>
-                                                Com carinho, <strong>Michel dos Santos Kuguio</strong> & <strong>Carolina
-                                                Tavares de
-                                                Oliveira</strong>
+                                                Com carinho, <strong>Michel dos Santos Kuguio </strong> & <strong>Carolina Tavares de Oliveira</strong>
                                             </p>
                                         </>
                                     )}
