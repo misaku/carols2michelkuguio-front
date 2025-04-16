@@ -239,8 +239,12 @@ interface ButtonProps {
     invert?: boolean;
 }
 export const Button = styled.button<ButtonProps>`
-    margin-top: 4rem;
     padding: 1rem;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     background: ${props =>props.invert? props.theme.colors.colorWhite: props.theme.colors.borderColor};
     color: ${props =>props.invert? props.theme.colors.titleColor: props.theme.colors.colorWhite};
     font-weight: 400;
@@ -302,7 +306,9 @@ export const ContentCard = styled.div`
         color: ${props => props.theme.colors.titleColor};
         align-self: center;
     }
-
+    strong {
+        font-weight: bold;
+    }
     @media ${device.mobile} {
 
         h1 {
@@ -390,6 +396,15 @@ export const WrapperImage = styled.div`
     align-items: center;
     justify-content: center;
     
+}
+`
+
+export const WrapperButton = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-self: flex-end;
 }
 `
 
