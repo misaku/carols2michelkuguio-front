@@ -22,11 +22,9 @@ export function AboutUs() {
             <MontserratTitle>
                 Ele perguntou e ela disse sim!
             </MontserratTitle>
-            <MontserratP>Em Holambra, com o pôr do sol se aproximando e cercados por campos de flores, ele fez uma das perguntas mais importantes de suas vidas.
+            <MontserratP>Em Holambra, com o pôr do sol se aproximando e cercados por campos de flores, ele fez uma das perguntas mais importantes de suas vidas: “Quer casar comigo?”
             </MontserratP>
-            <MontserratP>Com o coração acelerado e os olhos brilhando de emoção, ela sorriu... e disse sim! Um "sim"
-                que sela uma história que está sendo escrita com cumplicidade, carinho e um amor que a cada dia
-                cresce ainda mais. E agora, com a bênção de Deus, um novo capítulo dessa história começa..
+            <MontserratP>Com o coração acelerado e os olhos cheios de emoção, ela sorriu... e disse sim! Um "sim" que marca o início de um novo capítulo, construído com cumplicidade, carinho e um amor que cresce a cada dia. Agora, com a bênção de Deus, seguem juntos para viver essa nova fase da vida.
             </MontserratP>
             <AnimatedComponent animationType={'FadeInLeft'}>
                 <WrapperCard>

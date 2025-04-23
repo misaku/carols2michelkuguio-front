@@ -118,12 +118,10 @@ export const Invite: React.FC = memo(() => {
                         <SectionCard>
                             <p>
                                 Queridos <strong>{responseData?.title}</strong>,<br/>
-                                É com enorme carinho que queremos convidá-los para fazerem parte do nosso grande dia
-                                não só como amigos queridos, mas como nossos <strong>Madrinha e Padrinho</strong>.
+                                É com muito carinho que queremos convidá-los para estarem ao nosso lado como nossos <strong>padrinhos</strong>.
                             </p>
                             <p>
-                                A trajetória de vocês, marcada por companheirismo e amor, é uma inspiração para nós e
-                                tornará esse momento ainda mais especial.🥂💖
+                            A história de vocês, cheia de afeto, companheirismo e amor, é uma inspiração para nós. Ter a presença de vocês nesse dia especial vai deixar tudo ainda mais especial.🥂💖
                             </p>
                             {element}
                             <p>
@@ -174,9 +172,8 @@ export const Invite: React.FC = memo(() => {
                 return (
                     <SectionCard>
                         <p>
-                            Com as bênçãos do Senhor, que guiou nossos passos até aqui,
-                            compartilhamos a alegria de vivermos o início de uma nova etapa.
-                            convidamos <em>{responseData?.title}</em> e família para testemunhar e celebrar a nossa
+                            Com Deus guiando nossos passos, dividimos com alegria o começo de uma nova fase em nossas vidas.
+                            Convidamos <em>{responseData?.title}</em> e família para testemunhar e celebrar a nossa
                             união diante de Deus,
                             em um momento de fé, amor e gratidão.
 
