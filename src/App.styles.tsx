@@ -1,110 +1,118 @@
 import { createGlobalStyle } from 'styled-components'
+import {device} from "./App.theme.ts";
 
 export const GlobalStyle = createGlobalStyle`
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+       v2.0 | 20110126
+       License: none (public domain)
+    */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
 
-* {
-  margin: 0;
-}
+    ol, ul {
+        list-style: none;
+    }
 
-html {
-  font-size: 62.5%; /* Now 10px = 1rem! */
-}
+    blockquote, q {
+        quotes: none;
+    }
 
-body {
-  font-size: 16px; 
-  font-size: 1.6rem; 
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-}
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
 
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
 
-input, button, textarea, select {
-  font: inherit;
-}
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
 
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-}
+    * {
+        font-family: "Montserrat", "Open Sans", "Raleway", serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+        margin: 0;
+    }
 
-p {
-  text-wrap: pretty;
-}
-h1, h2, h3, h4, h5, h6 {
-  text-wrap: balance;
-}
-  
-html, body {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
+    html {
+        font-size: 62.5%; /* Now 10px = 1rem! */
+        @media ${device.mobile} {
+            font-size: 55.5%;
+        }
+    }
 
-#root {
-  view-transition-name: root;
-  isolation: isolate;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  background: #ff0;
-  height: 100%;
-  width: 100%;
-}`
+    body {
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    img, picture, video, canvas, svg {
+        display: block;
+        max-width: 100%;
+    }
+
+    input, button, textarea, select {
+        font: inherit;
+    }
+
+    p, h1, h2, h3, h4, h5, h6 {
+        overflow-wrap: break-word;
+    }
+
+    p {
+        text-wrap: pretty;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        text-wrap: balance;
+    }
+
+    html, body {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    #root {
+        view-transition-name: root;
+        isolation: isolate;
+        min-height: 100vh;
+        width: 100%;
+    }`
