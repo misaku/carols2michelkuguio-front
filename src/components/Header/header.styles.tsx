@@ -394,7 +394,7 @@ export const WrapperContent = styled.div`
         -moz-transform: rotate(50deg);
         -ms-transform: rotate(50deg);
         -o-transform: rotate(50deg);
-        filter: opacity(100%)  invert(50%) sepia(80%) brightness(100%) contrast(80%) hue-rotate(-35deg) saturate(300%) drop-shadow(4px 4px 6px rgba(69, 46, 37, 0.5));
+        filter: opacity(100%)  invert(40%) sepia(100%) brightness(100%) contrast(80%) hue-rotate(-35deg) saturate(200%) drop-shadow(4px 4px 6px rgba(69, 46, 37, 0.5));
         animation: ${slideFromRight} 1.5s ease-in-out forwards;
     }
 
@@ -421,7 +421,7 @@ export const WrapperContent = styled.div`
         -moz-transform: rotate(-130deg);
         -ms-transform: rotate(-130deg);
         -o-transform: rotate(-130deg);
-        filter: opacity(100%) invert(50%) sepia(80%) brightness(90%) contrast(75%) hue-rotate(-35deg) saturate(300%) drop-shadow(4px 4px 6px rgba(69, 46, 37, 0.5));
+        filter: opacity(100%)  invert(40%) sepia(100%) brightness(100%) contrast(80%) hue-rotate(-35deg) saturate(200%) drop-shadow(4px 4px 6px rgba(69, 46, 37, 0.5));
         animation: ${slideFromLeft} 1.5s ease-in-out forwards;
     }
 
