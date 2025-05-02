@@ -5,57 +5,107 @@ import flower from '../../assets/flower-small.svg'
 import {device} from "../../App.theme.ts";
 import {ParallaxBanner} from "react-scroll-parallax";
 const slideFromLeft = keyframes`
-  from {
-    transform: translateX(-100%) rotate(-0deg);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0) rotate(-130deg);
-    opacity: 0.5;
-  }
+    from {
+        transform: translateX(-100%) rotate(-0deg);
+        opacity: 0;
+        -moz-opacity: 0;
+        -webkit-opacity: 0;
+        -khtml-opacity: 0;
+        -ms-opacity: 0;
+        -o-opacity: 0;
+    }
+    to {
+        transform: translateX(0) rotate(-130deg);
+        opacity: 0.5;
+        -moz-opacity: 0.5;
+        -webkit-opacity: 0.5;
+        -khtml-opacity: 0.5;
+        -ms-opacity: 0.5;
+        -o-opacity: 0.5;
+    }
 `;
 
 const slideFromRight = keyframes`
-  from {
-    transform: translateX(100%) rotate(150deg);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0) rotate(50deg);
-    opacity: 0.5;
-  }
+    from {
+        transform: translateX(100%) rotate(150deg);
+        opacity: 0;
+        -moz-opacity: 0;
+        -webkit-opacity: 0;
+        -khtml-opacity: 0;
+        -ms-opacity: 0;
+        -o-opacity: 0;
+    }
+    to {
+        transform: translateX(0) rotate(50deg);
+        opacity: 0.5;
+        -moz-opacity: 0.5;
+        -webkit-opacity: 0.5;
+        -khtml-opacity: 0.5;
+        -ms-opacity: 0.5;
+        -o-opacity: 0.5;
+    }
 `;
 
 const slideToUp = keyframes`
-  from {
-    transform: translateY(50%) ;
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    from {
+        transform: translateY(50%);
+        opacity: 0;
+        -moz-opacity: 0;
+        -webkit-opacity: 0;
+        -khtml-opacity: 0;
+        -ms-opacity: 0;
+        -o-opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        -moz-opacity: 1;
+        -webkit-opacity: 1;
+        -khtml-opacity: 1;
+        -ms-opacity: 1;
+        -o-opacity: 1;
+    }
 `;
 
 const slideToDown = keyframes`
-  from {
-    transform: translateY(-50%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+        -moz-opacity: 0;
+        -webkit-opacity: 0;
+        -khtml-opacity: 0;
+        -ms-opacity: 0;
+        -o-opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        -moz-opacity: 1;
+        -webkit-opacity: 1;
+        -khtml-opacity: 1;
+        -ms-opacity: 1;
+        -o-opacity: 1;
+    }
 `;
 const zoom = keyframes`
-  from {
-    transform: scale(0%) rotate(150deg);
-    opacity: 0;
-  }
-  to {
-    transform: scale(100%) rotate(0deg);
-    opacity: 1;
-  }
+    from {
+        transform: scale(0%) rotate(150deg);
+        opacity: 0;
+        -moz-opacity: 0;
+        -webkit-opacity: 0;
+        -khtml-opacity: 0;
+        -ms-opacity: 0;
+        -o-opacity: 0;
+    }
+    to {
+        transform: scale(100%) rotate(0deg);
+        opacity: 1;
+        -moz-opacity: 1;
+        -webkit-opacity: 1;
+        -khtml-opacity: 1;
+        -ms-opacity: 1;
+        -o-opacity: 1;
+    }
 `;
 
 interface HeaderWrapperProps {
@@ -84,6 +134,11 @@ export const HeaderWrapper = styled(ParallaxBanner)<HeaderWrapperProps>`
     &>div:first-child {
         background-image: linear-gradient(rgba(77, 48, 26, 0.5), rgba(85, 85, 85, 0.8)), url(${minhaFoto}) !important; /* Adiciona o gradiente com a imagem */
         opacity: 0.5;
+        -moz-opacity: 0.5;
+        -webkit-opacity: 0.5;
+        -khtml-opacity: 0.5;
+        -ms-opacity: 0.5;
+        -o-opacity: 0.5;
         filter: blur(1px)
     }
 
@@ -329,6 +384,11 @@ export const WrapperContent = styled.div`
         background-repeat: no-repeat;
         background-size: contain;
         opacity: 0;
+        -moz-opacity: 0;
+        -webkit-opacity: 0;
+        -khtml-opacity: 0;
+        -ms-opacity: 0;
+        -o-opacity: 0;
         transform: rotate(50deg);
         -webkit-transform: rotate(50deg);
         -moz-transform: rotate(50deg);
@@ -350,7 +410,12 @@ export const WrapperContent = styled.div`
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;
-        opacity: 0.5;
+        opacity: 0;
+        -moz-opacity: 0;
+        -webkit-opacity: 0;
+        -khtml-opacity: 0;
+        -ms-opacity: 0;
+        -o-opacity: 0;
         transform: rotate(-130deg);
         -webkit-transform: rotate(-130deg);
         -moz-transform: rotate(-130deg);
