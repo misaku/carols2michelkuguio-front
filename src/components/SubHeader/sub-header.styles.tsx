@@ -193,7 +193,7 @@ export const Line = styled.div`
         -ms-opacity: 0.5;
         -o-opacity: 0.5;
         transform: rotate(136deg);
-        filter: invert(24%) sepia(93%) saturate(610%) hue-rotate(-56deg) brightness(92%) contrast(87%);;
+        filter:  opacity(60%) invert(24%) sepia(50%)  brightness(100%) contrast(100%) hue-rotate(-56deg) saturate(400%) drop-shadow(4px 4px 6px rgba(69, 46, 37, 0.5));
     }
 
     &::after {
@@ -215,7 +215,6 @@ export const Line = styled.div`
         -ms-opacity: 0.5;
         -o-opacity: 0.5;
         transform: rotate(-31deg);
-        filter: invert(24%) sepia(93%) saturate(610%) hue-rotate(-56deg) brightness(92%) contrast(87%);
-
+        filter:  opacity(60%) invert(24%) sepia(50%)  brightness(100%) contrast(100%) hue-rotate(-56deg) saturate(400%) drop-shadow(4px 4px 6px rgba(69, 46, 37, 0.5));
     }
 `
