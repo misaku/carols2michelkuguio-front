@@ -13,8 +13,14 @@ import {
 import noiva from '../../assets/noiva.jpg'
 import noivo from '../../assets/noivo.jpg'
 import {AnimatedComponent} from "../Animations";
+import {useEffect} from "react";
+import {useReadyStore} from "../../ready.store.ts";
 
 export function AboutUs() {
+    const {makeAboutUsReady} = useReadyStore();
+    useEffect(() => {
+        makeAboutUsReady();
+    }, [makeAboutUsReady]);
     return (
 <Wrapper id={"quem-somos"}>
         <Container>

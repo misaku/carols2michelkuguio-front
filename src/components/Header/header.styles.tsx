@@ -109,7 +109,7 @@ const zoom = keyframes`
 `;
 
 interface HeaderWrapperProps {
-    menuIsOpen?: boolean;
+    open?: boolean;
 }
 export const HeaderWrapper = styled(ParallaxBanner)<HeaderWrapperProps>`
     display: flex;
@@ -126,7 +126,7 @@ export const HeaderWrapper = styled(ParallaxBanner)<HeaderWrapperProps>`
     padding-bottom: 15rem;
     overflow: hidden;
     @media ${device.mobile} {
-        ${({menuIsOpen}) => (menuIsOpen && css`
+        ${({open}) => (open && css`
             padding-top: 300px;
             height: calc(100vh + 200px);
         `)}

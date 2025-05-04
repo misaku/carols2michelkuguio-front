@@ -4,6 +4,7 @@ import {api} from "../../service.ts";
 import {useForm} from "react-hook-form";
 import {RequestProps, ResponseProps} from "./invite.types.tsx";
 import {useSearchParams} from "react-router";
+import {useReadyStore} from "../../ready.store.ts";
 
 export const useInviteController = () => {
     const [phone, setPhone] = useState("");
@@ -13,7 +14,7 @@ export const useInviteController = () => {
     const [loading, setLoading] = useState<boolean>(false);
     const {control, handleSubmit} = useForm();
     const [searchParams, setSearchParams] = useSearchParams();
-
+    const {makeInviteReady} = useReadyStore();
     const invite = useMemo(()=>searchParams.get('invite'),[searchParams]);
     const clearInvite = useCallback(() => {
         searchParams.delete("invite");
@@ -125,9 +126,13 @@ export const useInviteController = () => {
         }
     },[clearAll, responseData?.id, responseData?.users])
 
+    const needConfirmation = useMemo(()=> responseData?.confirmation === null || responseData?.confirmation === undefined, [responseData])
     useEffect(()=>{
         if(invite) handleSearch().then()
     },[handleSearch, invite])
+    useEffect(() => {
+        makeInviteReady();
+    }, [makeInviteReady]);
     return {
         recuse,
         confirm,
@@ -140,6 +145,7 @@ export const useInviteController = () => {
         responseData,
         requestData,
         phone,
-        finish
+        finish,
+        needConfirmation
     }
 }

@@ -17,9 +17,9 @@ const ANIMATION_VARIANTS = {
     FadeFlipRight: { initial: { opacity: 0, rotateY: 90 }, animate: { opacity: 1, rotateY: 0 } },
     FadeFlipLeft: { initial: { opacity: 0, rotateY: -90 }, animate: { opacity: 1, rotateY: 0 } },
 };
-
+export type AnimationType = keyof typeof ANIMATION_VARIANTS;
 interface AnimatedComponentProps extends React.PropsWithChildren {
-    animationType: keyof typeof ANIMATION_VARIANTS; // Tipos permitidos
+    animationType: AnimationType; // Tipos permitidos
 }
 
 export const AnimatedComponent: React.FC<AnimatedComponentProps> = ({

@@ -42,7 +42,8 @@ export const Invite: React.FC = memo(() => {
         handleSearch,
         phone,
         finish,
-        invite
+        invite,
+        needConfirmation
     } = useInviteController();
     const renderMessage: (element: React.ReactElement) => React.ReactElement = (element) => {
         switch (inviteType) {
@@ -118,10 +119,12 @@ export const Invite: React.FC = memo(() => {
                         <SectionCard>
                             <p>
                                 Queridos <strong>{responseData?.title}</strong>,<br/>
-                                É com muito carinho que queremos convidá-los para estarem ao nosso lado como nossos <strong>padrinhos</strong>.
+                                É com muito carinho que queremos convidá-los para estarem ao nosso lado como
+                                nossos <strong>padrinhos</strong>.
                             </p>
                             <p>
-                            A história de vocês, cheia de afeto, companheirismo e amor, é uma grande inspiração. A presença de vocês tornará esse dia ainda mais incrível.🥂💖
+                                A história de vocês, cheia de afeto, companheirismo e amor, é uma grande inspiração. A
+                                presença de vocês tornará esse dia ainda mais incrível.🥂💖
                             </p>
                             {element}
                             <p>
@@ -172,7 +175,8 @@ export const Invite: React.FC = memo(() => {
                 return (
                     <SectionCard>
                         <p>
-                            Com Deus guiando nossos passos, dividimos com alegria o começo de uma nova fase em nossas vidas.
+                            Com Deus guiando nossos passos, dividimos com alegria o começo de uma nova fase em nossas
+                            vidas.
                             Convidamos <strong>{responseData?.title}</strong> para testemunhar e celebrar a nossa
                             união diante de Deus,
                             em um momento de fé, amor e gratidão.
@@ -195,7 +199,7 @@ export const Invite: React.FC = memo(() => {
                             <HorizontMarging/>
                             <VerticalMarging/>
                             <ContentCard>
-                                {!inviteType && !loading && !requestData && !invite &&(<>
+                                {!inviteType && !loading && !requestData && !invite && (<>
                                     <h1>Busque o seu convite</h1>
                                     <p>
                                         Digite seu número de telefone logo abaixo para localizar seu convite e confirmar
@@ -231,13 +235,16 @@ export const Invite: React.FC = memo(() => {
                                             </p>
                                         </>
                                     )}
+                                    {needConfirmation && (
+                                        <WrapperButton>
+                                            <Button type={'button'} onClick={confirm}>Confirmar</Button><Button invert
+                                                                                                                type={'button'}
+                                                                                                                onClick={recuse}>Não
+                                            posso ir</Button>
+                                        </WrapperButton>
+                                    )}
 
-                <WrapperButton>
-                    <Button type={'button'} onClick={confirm}>Confirmar</Button><Button invert
-                                                                                        type={'button'}
-                                                                                        onClick={recuse}>Não
-                    posso ir</Button>
-                </WrapperButton>
+
                                 </>)}
 
                                 {requestData && (<>
