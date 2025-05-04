@@ -121,7 +121,7 @@ export const Invite: React.FC = memo(() => {
                                 É com muito carinho que queremos convidá-los para estarem ao nosso lado como nossos <strong>padrinhos</strong>.
                             </p>
                             <p>
-                            A história de vocês, cheia de afeto, companheirismo e amor, é uma inspiração para nós. Ter a presença de vocês nesse dia especial vai deixar tudo ainda mais especial.🥂💖
+                            A história de vocês, cheia de afeto, companheirismo e amor, é uma grande inspiração. A presença de vocês tornará esse dia ainda mais incrível.🥂💖
                             </p>
                             {element}
                             <p>
@@ -215,7 +215,7 @@ export const Invite: React.FC = memo(() => {
                                     </WrapperLottie>
                                 )}
                                 {inviteType && !loading && !requestData && (<>
-                                    <h1>Estamos nos casando!</h1>
+                                    <h1>Enfim, o grande dia!</h1>
                                     {renderMessage(
                                         <>
                                             <p>
