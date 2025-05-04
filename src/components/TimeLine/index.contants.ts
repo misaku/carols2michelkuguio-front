@@ -12,6 +12,7 @@ import natal from '../../assets/natal.jpg'
 import noivado from '../../assets/noivado.jpg'
 import santa_rita from '../../assets/santa_rita.jpg'
 import pesca from '../../assets/pesca.jpg'
+import rifania from '../../assets/rifania.jpg'
 
 interface TimeLineItem {
     title: string;
@@ -23,13 +24,13 @@ interface TimeLineItem {
 export const TIME_LINE_ITEMS: TimeLineItem[] = [
     {
         title: 'Corujão',
-        description: 'Nos encontramos pela primeira vez ao vivo no Corujão, um evento de jogos da empresa. Entre risadas, partidas e conversas, tudo se encaixou de vez. Naquele dia, tive certeza: era ao lado dele que eu gostaria de estar.',
+        description: 'Nos vimos pela primeira vez ao vivo durante o Corujão, um evento de jogos da empresa. Entre risadas, partidas animadas e conversas leves, tudo simplesmente se encaixou.',
         date: '19/08/2023',
         image: inicio
     },
     {
         title: 'Fim de ano',
-        description: 'Passamos a virada do ano juntos em Jaboticabal, onde tive a oportunidade de conhecer a família dele. Foi um dia incrível, repleto de momentos especiais, muitas risadas e, claro, um bom tempo aproveitando a piscina',
+        description: 'Passamos a virada do ano juntos em Jaboticabal. Foi um dia incrível, repleto de momentos especiais, muitas risadas e, claro, um bom tempo aproveitando a piscina',
         date: '31/12/2023',
         image: piscina2
     },
@@ -41,13 +42,13 @@ export const TIME_LINE_ITEMS: TimeLineItem[] = [
     },
     {
         title: 'Guapé',
-        description: 'Ele conheceu minha família e, em uma das nossas viagens, fomos para a roça da minha avó, em Guapé. Foi lá que descobri que ele gostava de pescar, e entre momentos simples e especiais, percebi ainda mais o quanto combinávamos..',
+        description: 'Ele conheceu minha família e, em uma das nossas viagens, fomos para a roça da minha avó, em Guapé. Pescamos e descobrimos um hobbie em comum. ',
         date: '26/01/2024',
         image: primeira_pesca
     },
     {
         title: 'Capitólio',
-        description: 'Fomos para capitólio e para vargem bonita, visitamos cachoeiras e conhecemos o pessoal da vargem bonita',
+        description: 'Fomos para capitólio e para vargem bonita, visitamos cachoeiras e rios. Foi bem legal!',
         date: '17/03/2024',
         image: capitolio
     },
@@ -59,7 +60,7 @@ export const TIME_LINE_ITEMS: TimeLineItem[] = [
     },
     {
         title: 'Holambra',
-        description: 'Caminhamos pelos campos floridos de Holambra, visitamos o imponente Moinho Povos Unidos e me deliciei com a culinária holandesa. O charme das ruas, o aroma das flores e a tranquilidade da cidade tornaram o dia inesquecível.',
+        description: 'Caminhamos pelos campos floridos de Holambra, visitamos o Moinho Povos Unidos e aproveitamos a culinária holandesa.',
         date: '14/07/2024',
         image: holambra2
     },
@@ -76,8 +77,14 @@ export const TIME_LINE_ITEMS: TimeLineItem[] = [
         image: noivado
     },
     {
+        title: 'Rifaina',
+        description: 'Tivemos um dia inesquecível em Rifaina, navegando de lancha com pessoas especiais e colecionando lembranças felizes',
+        date: '20/10/2024',
+        image: rifania
+    },
+    {
         title: 'Miguelópolis',
-        description: 'Fomos pescar tucunaré em Miguelópolis e vivemos um dia incrível no mato. O rio estava calmo, os peixes apareceram, e a emoção de cada puxada na linha foi de arrepiar.',
+        description: 'Fomos pescar tucunaré  de barco em Miguelópolis. O rio estava calmo, os peixes apareceram, mas depois o tempo fechou e choveu e saimos rapido com o barco deu muita adrenalina',
         date: '26/10/2024',
         image: pesca
     },
