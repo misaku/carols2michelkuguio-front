@@ -173,7 +173,7 @@ export const Invite: React.FC = memo(() => {
                     <SectionCard>
                         <p>
                             Com Deus guiando nossos passos, dividimos com alegria o começo de uma nova fase em nossas vidas.
-                            Convidamos <em>{responseData?.title}</em> para testemunhar e celebrar a nossa
+                            Convidamos <strong>{responseData?.title}</strong> para testemunhar e celebrar a nossa
                             união diante de Deus,
                             em um momento de fé, amor e gratidão.
 
