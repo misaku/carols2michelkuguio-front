@@ -5,7 +5,7 @@ import {useReadyStore} from "../ready.store.ts";
 export const SmoothScroll: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const location = useLocation();
     const {headerReady, aboutUsReady, inviteReady, timeLineReady} = useReadyStore();
-    const isReady = useMemo(() => headerReady && aboutUsReady && inviteReady && timeLineReady, [aboutUsReady, headerReady, inviteReady, timeLineReady]);
+    const isReady = useMemo(() => (headerReady && aboutUsReady && timeLineReady)  ||  (headerReady && inviteReady), [aboutUsReady, headerReady, inviteReady, timeLineReady]);
     useEffect(() => {
         if(isReady){
             const sectionId = location.pathname.substring(1);

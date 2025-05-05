@@ -4,6 +4,7 @@ import App from './App.tsx'
 import {BrowserRouter, Navigate, Route, Routes} from "react-router";
 import {SmoothScroll} from "./components/SmoothScrooll.tsx";
 import {ParallaxProvider} from "react-scroll-parallax";
+import InvitePage from "./InvitePage.tsx";
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
@@ -11,8 +12,7 @@ createRoot(document.getElementById('root')!).render(
             <BrowserRouter>
                 <SmoothScroll>
                     <Routes>
-
-
+                        <Route path="/confirmacao" element={<InvitePage/>}/>
                         <Route path="/*" element={<App/>}/>
 
                         {/*/!* Rotas separadas (exemplo: carrinho de compras) *!/*/}
