@@ -169,12 +169,6 @@ export const WrapperNavBar = styled.div<WrapperNavBarProps>`
     top: 0;
     position: fixed;
     z-index: 999;
-    @media ${device.mobile} {
-        ${({theme}) => ( css`
-        background-color: rgba(0, 0, 0, 0.08);
-        color: ${theme.colors.titleColor};
-    `)}
-    }
     ${({theme}) => (css`
         -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
         -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
@@ -182,7 +176,6 @@ export const WrapperNavBar = styled.div<WrapperNavBarProps>`
         background-color: ${theme.colors.colorWhite}; /* Altera a cor com base no estado */
         color: ${theme.colors.titleColor};
     `)}
-    transition: background-color 0.3s ease, color 0.3s ease;
     
 `;
 export interface NavBarProps {
@@ -294,7 +287,7 @@ export const WrapperIcon = styled.div<WrapperIconProps>`
     justify-content: center;
     font-size: 4rem;
     color: #fff;
-    color: ${({isScrolled, theme})=>isScrolled?theme.colors.titleColor:theme.colors.colorWhite};
+    color: ${({theme})=>theme.colors.titleColor};
     &:hover {
         cursor: pointer;
         background-color: rgba(0, 0, 0, 0.05);
@@ -304,134 +297,4 @@ export const WrapperIcon = styled.div<WrapperIconProps>`
         visibility: visible;
     }
 `
-export const HeaderText = styled.div`
-    font-family: "Great Vibes", serif;
-    display: flex;
-    flex-direction: column;
-    line-height: 10rem;
-    font-style: normal;
-    color: ${props => props.theme.colors.colorWhite};
-    font-size: 10rem;
-    font-weight: 700;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    text-shadow: 0px 0px 100px #1e0000;
 
-    strong:first-child{
-                animation: ${slideToUp} 1.5s ease-in-out forwards;
-    }
-    strong:last-child{
-                animation: ${slideToDown} 1.5s ease-in-out forwards;
-    }
-    strong {
-        display: block;
-        font-size: 10rem;
-        box-sizing: border-box;
-        line-height: 13rem;
-        height: 10rem;
-        text-align: center;
-        vertical-align: middle;
-        padding-right: 1.6rem;
-    }
-
-    span {
-        display: block;
-        font-size: 4rem;
-        box-sizing: border-box;
-        line-height: 5.5rem;
-        height: 4rem;
-        text-align: center;
-        vertical-align: middle;
-        padding-right: 0.8rem;
-        animation: ${zoom} 1.5s ease-in-out forwards;
-    }
-
-    @media ${device.mobile} {
-
-        strong {
-            font-size: 8rem;
-        }
-
-    }
-`;
-
-
-export const ContentHeader = styled.div`
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-`;
-
-export const WrapperContent = styled.div`
-    padding: 5rem 14rem;
-    position: relative;;
-
-    &::before {
-        background-image: url(${flower});
-        content: "";
-        width: 20rem;
-        height: 20rem;
-        position: absolute;
-        bottom: 7rem;
-        right: -2rem;
-        z-index: 1;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        opacity: 0;
-        -moz-opacity: 0;
-        -webkit-opacity: 0;
-        -khtml-opacity: 0;
-        -ms-opacity: 0;
-        -o-opacity: 0;
-        transform: rotate(50deg);
-        -webkit-transform: rotate(50deg);
-        -moz-transform: rotate(50deg);
-        -ms-transform: rotate(50deg);
-        -o-transform: rotate(50deg);
-        filter: opacity(100%)  invert(40%) sepia(100%) brightness(100%) contrast(80%) hue-rotate(-35deg) saturate(200%) drop-shadow(4px 4px 6px rgba(69, 46, 37, 0.5));
-        animation: ${slideFromRight} 1.5s ease-in-out forwards;
-    }
-
-    &::after {
-        background-image: url(${flower});
-        content: "";
-        width: 20rem;
-        height: 20rem;
-        position: absolute;
-        bottom: 7rem;
-        left: -2rem;
-        z-index: 1;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        opacity: 0;
-        -moz-opacity: 0;
-        -webkit-opacity: 0;
-        -khtml-opacity: 0;
-        -ms-opacity: 0;
-        -o-opacity: 0;
-        transform: rotate(-130deg);
-        -webkit-transform: rotate(-130deg);
-        -moz-transform: rotate(-130deg);
-        -ms-transform: rotate(-130deg);
-        -o-transform: rotate(-130deg);
-        filter: opacity(100%)  invert(40%) sepia(100%) brightness(100%) contrast(80%) hue-rotate(-35deg) saturate(200%) drop-shadow(4px 4px 6px rgba(69, 46, 37, 0.5));
-        animation: ${slideFromLeft} 1.5s ease-in-out forwards;
-    }
-
-    @media ${device.mobile} {
-
-        padding: 5rem 9rem;
-        position: relative;;
-
-        &::before, &::after {
-            width: 18rem;
-            height: 18rem;
-        }
-    }
-`
