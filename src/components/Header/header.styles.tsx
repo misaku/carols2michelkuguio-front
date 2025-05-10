@@ -208,7 +208,7 @@ export const NavBar = styled.nav<NavBarProps>`
             justify-content: center;
             align-items: center;
             list-style: none;
-            min-height: 6rem;
+            min-height: 60px;
             &:hover {
                 background-color: rgba(0, 0, 0, 0.05);
             }

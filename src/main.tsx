@@ -5,26 +5,39 @@ import {BrowserRouter, Navigate, Route, Routes} from "react-router";
 import {SmoothScroll} from "./components/SmoothScrooll.tsx";
 import {ParallaxProvider} from "react-scroll-parallax";
 import InvitePage from "./InvitePage.tsx";
+import {ThemeProvider} from "styled-components";
+import {theme} from "./App.theme.ts";
+import {GlobalStyle} from "./App.styles.tsx";
+import AppCart from "./components/AppCart";
+import {CartProvider} from "./contexts/cart-context";
+import {ProductsProvider} from "./contexts/products-context";
+import {ToastContainer} from "react-toastify";
+
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <ParallaxProvider>
-            <BrowserRouter>
-                <SmoothScroll>
-                    <Routes>
-                        <Route path="/confirmacao" element={<InvitePage/>}/>
-                        <Route path="/*" element={<App/>}/>
+        <ThemeProvider theme={theme}>
+            <ProductsProvider>
+                <CartProvider>
+                    <ParallaxProvider>
+                        <BrowserRouter>
+                            <GlobalStyle/>
+                            <ToastContainer/>
+                            <SmoothScroll>
+                                <Routes>
+                                    <Route path="/confirmacao" element={<InvitePage/>}/>
+                                    <Route path="/presenteie-os-noivos" element={<AppCart/>}/>
+                                    <Route path="/*" element={<App/>}/>
+                                    <Route path="*" element={<Navigate to="/"/>}/>
 
-                        {/*/!* Rotas separadas (exemplo: carrinho de compras) *!/*/}
-                        {/*<Route path="/presenteie-os-noivos" element={<Cart />} />*/}
+                                </Routes>
+                            </SmoothScroll>
+                        </BrowserRouter>
+                    </ParallaxProvider>
+                </CartProvider>
+            </ProductsProvider>
+        </ThemeProvider>
 
-                        {/* Rota padrão: redireciona para a home */}
-                        <Route path="*" element={<Navigate to="/"/>}/>
-
-                    </Routes>
-                </SmoothScroll>
-            </BrowserRouter>
-        </ParallaxProvider>
 
     </StrictMode>,
 )

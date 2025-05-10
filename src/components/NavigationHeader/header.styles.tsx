@@ -57,15 +57,19 @@ export const HeaderWrapper = styled(ParallaxBanner)<HeaderWrapperProps>`
 
 export interface WrapperNavBarProps {
     isScrolled?: boolean;
+    hasCart?:boolean;
 }
 
 export const WrapperNavBar = styled.div<WrapperNavBarProps>`
     width: 100%;
-    min-height: 6rem;
+    min-height: 60px;
     display: block;
     top: 0;
     position: fixed;
     z-index: 999;
+    ${({hasCart}) => (hasCart && css`
+        padding-right: 60px;    
+    `)}
     ${({theme}) => (css`
         -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
         -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
@@ -97,7 +101,7 @@ export const NavBar = styled.nav<NavBarProps>`
             justify-content: center;
             align-items: center;
             list-style: none;
-            min-height: 6rem;
+            min-height: 60px;
             &:hover {
                 background-color: rgba(0, 0, 0, 0.05);
             }
