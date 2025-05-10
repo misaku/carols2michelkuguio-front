@@ -101,7 +101,7 @@ export const useInviteController = () => {
             users: responseData?.users.map(user => ({id: user.id, confirmation: true}))
         }
         const cuntHonors = responseData?.users.filter(user => !!user.honor).length
-        if (cuntHonors == responseData?.users?.length || cuntHonors == 0) {
+        if (cuntHonors == responseData?.users?.length || cuntHonors == 0 && responseData?.users?.length ==1) {
             await updateInvite(payload)
             return;
         }
