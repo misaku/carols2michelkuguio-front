@@ -12,6 +12,7 @@ import AppCart from "./components/AppCart";
 import {CartProvider} from "./contexts/cart-context";
 import {ProductsProvider} from "./contexts/products-context";
 import {ToastContainer} from "react-toastify";
+import {Lgpd} from "./Lgpd.tsx";
 
 
 createRoot(document.getElementById('root')!).render(
@@ -27,6 +28,7 @@ createRoot(document.getElementById('root')!).render(
                                 <Routes>
                                     <Route path="/confirmacao" element={<InvitePage/>}/>
                                     <Route path="/presenteie-os-noivos" element={<AppCart/>}/>
+                                    <Route path="/politica-de-privacidade" element={<Lgpd/>}/>
                                     <Route path="/*" element={<App/>}/>
                                     <Route path="*" element={<Navigate to="/"/>}/>
 
