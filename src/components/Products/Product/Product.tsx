@@ -14,30 +14,11 @@ interface IProps {
 const Product = ({ product }: IProps) => {
   const { openCart, addProduct } = useCart();
   const {
-    sku,
-    title,
-    price,
-    installments,
-    currencyId,
-    currencyFormat,
+nome, preco, imagem
   } = product;
 
-  const formattedPrice = formatPrice(price, currencyId);
-  let productInstallment;
+  const formattedPrice = formatPrice(preco, 'BRL');
 
-  if (installments) {
-    const installmentPrice = price / installments;
-
-    productInstallment = (
-      <S.Installment>
-        <span>or {installments} x</span>
-        <b>
-          {currencyFormat}
-          {formatPrice(installmentPrice, currencyId)}
-        </b>
-      </S.Installment>
-    );
-  }
 
   const handleAddProduct = () => {
     addProduct({ ...product, quantity: 1 });
@@ -52,16 +33,15 @@ const Product = ({ product }: IProps) => {
   };
 
   return (
-    <S.Container onKeyUp={handleAddProductWhenEnter} sku={sku} tabIndex={1}>
-      <S.Image alt={title} />
-      <S.Title>{title}</S.Title>
+    <S.Container onKeyUp={handleAddProductWhenEnter} sku={imagem} tabIndex={1}>
+      <S.Image alt={nome} />
+      <S.Title>{nome}</S.Title>
       <S.Price>
         <S.Val>
-          <small>{currencyFormat}</small>
+          <small>R$</small>
           <b>{formattedPrice.substring(0, formattedPrice.length - 3)}</b>
           <span>{formattedPrice.substring(formattedPrice.length - 3)}</span>
         </S.Val>
-        {productInstallment}
       </S.Price>
       <S.BuyButton onClick={handleAddProduct} tabIndex={-1}>
         Adicionar ao carrinho

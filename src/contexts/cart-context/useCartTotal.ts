@@ -14,25 +14,16 @@ const useCartTotal = () => {
     );
 
     const totalPrice = products.reduce((sum: number, product: ICartProduct) => {
-      sum += product.price * product.quantity;
+      sum += product.preco * product.quantity;
       return sum;
     }, 0);
 
-    const installments = products.reduce(
-      (greater: number, product: ICartProduct) => {
-        greater =
-          product.installments > greater ? product.installments : greater;
-        return greater;
-      },
-      0
-    );
 
     const total = {
       productQuantity,
-      installments,
       totalPrice,
-      currencyId: 'USD',
-      currencyFormat: '$',
+      currencyId: 'BRL',
+      currencyFormat: 'R$',
     };
 
     setTotal(total);

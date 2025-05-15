@@ -92,5 +92,7 @@ export const Image = styled.img`
     width: 15%;
     height: auto;
     margin-right: 3%;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
     border-radius: 2px;
 `;

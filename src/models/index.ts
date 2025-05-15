@@ -1,15 +1,8 @@
 export interface IProduct {
-  id: number;
-  sku: number;
-  title: string;
-  description: string;
-  availableSizes: string[];
-  style: string;
-  price: number;
-  installments: number;
-  currencyId: string;
-  currencyFormat: string;
-  isFreeShipping: boolean;
+  nome: string;
+  categoria: string;
+  imagem: string;
+  preco: number;
 }
 
 export interface ICartProduct extends IProduct {

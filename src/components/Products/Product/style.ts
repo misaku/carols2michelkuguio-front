@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const getImage = (sku: string|number,type=1)=>{
-  return `/static/products/${sku}-${type}-product.webp`
+const getImage = (sku: string|number)=>{
+  return `/static/products/${sku}`
 }
 export const BuyButton = styled.button`
   background-color: ${({ theme }) => theme.colors.primary};
@@ -38,7 +38,6 @@ export const Container = styled.div<IContainer>`
   cursor: default;
   outline: none;
   border-radius: 5px;
-  overflow: hidden;
   &:focus-visible {
     outline: 3px solid ${({ theme }) => theme.colors.secondary};
   }
@@ -54,7 +53,7 @@ export const Container = styled.div<IContainer>`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     ::before {
       content: '';
       display: block;
@@ -72,9 +71,7 @@ export const Container = styled.div<IContainer>`
   }
 
   &:hover {
-    ${Image} {
-      background-image: ${({ sku }) =>
-        `url(${getImage(sku, 2)})`};
+    background-color: #f4f4f4;
     }
 
     ${BuyButton} {
@@ -89,8 +86,8 @@ export const Container = styled.div<IContainer>`
 export const Title = styled.p`
   position: relative;
   padding: 0 20px;
-  height: 60px;
-  font-size: 1.6rem;
+  height: 100px;
+  font-size: 1.4rem;
   &::before {
     content: '';
     width: 20px;
@@ -121,9 +118,4 @@ export const Val = styled.p`
     font-size: 3.2rem;
     margin-left: 5px;
   }
-`;
-
-export const Installment = styled.p`
-  margin: 0;
-  color: #9c9b9b;
 `;

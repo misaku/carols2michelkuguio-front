@@ -13,7 +13,7 @@ const Cart = () => {
       alert(
         `Checkout - Subtotal: ${total.currencyFormat} ${formatPrice(
           total.totalPrice,
-          total.currencyId
+      'BRL'
         )}`
       );
     } else {
@@ -54,20 +54,8 @@ const Cart = () => {
             <S.SubPrice>
               <S.SubPriceValue>{`${total.currencyFormat} ${formatPrice(
                 total.totalPrice,
-                total.currencyId
+                'BRL'
               )}`}</S.SubPriceValue>
-              <S.SubPriceInstallment>
-                {total.installments ? (
-                  <span>
-                    {`OU ${total.installments} x ${
-                      total.currencyFormat
-                    } ${formatPrice(
-                      total.totalPrice / total.installments,
-                      total.currencyId
-                    )}`}
-                  </span>
-                ) : null}
-              </S.SubPriceInstallment>
             </S.SubPrice>
             <S.CheckoutButton onClick={handleCheckout} autoFocus>
               Finalizar

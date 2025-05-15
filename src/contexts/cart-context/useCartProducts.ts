@@ -11,7 +11,7 @@ const useCartProducts = () => {
     targetProduct: ICartProduct,
     quantity: number
   ): ICartProduct => {
-    if (currentProduct.id === targetProduct.id) {
+    if (currentProduct.nome === targetProduct.nome) {
       return Object.assign({
         ...currentProduct,
         quantity: currentProduct.quantity + quantity,
@@ -24,7 +24,7 @@ const useCartProducts = () => {
   const addProduct = (newProduct: ICartProduct) => {
     let updatedProducts;
     const isProductAlreadyInCart = products.some(
-      (product: ICartProduct) => newProduct.id === product.id
+      (product: ICartProduct) => newProduct.nome === product.nome
     );
 
     if (isProductAlreadyInCart) {
@@ -41,7 +41,7 @@ const useCartProducts = () => {
 
   const removeProduct = (productToRemove: ICartProduct) => {
     const updatedProducts = products.filter(
-      (product: ICartProduct) => product.id !== productToRemove.id
+      (product: ICartProduct) => product.nome !== productToRemove.nome
     );
 
     setProducts(updatedProducts);
