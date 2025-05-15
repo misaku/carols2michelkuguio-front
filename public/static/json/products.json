@@ -56,19 +56,19 @@
         "categoria": "Lavanderia"
       },
       {
-        "nome": "Cabeceira Casal Queen 240cm com Frame Laranjeiras Carvalho",
-        "imagem": "Cama.jpg",
+        "nome": "Cabeceira casal queen Frame Laranjeiras Carvalho",
+        "imagem": "Cabeceira.jpg",
         "preco": 917.00,
         "categoria": "Quarto"
       },
       {
-        "nome": "Cama Box + Colchão Castor Queen Premium One Face Tecnopedic 158x198x57cm",
+        "nome": "Cama Box + Colchão Castor Queen Premium",
         "imagem": "box.jpg",
         "preco": 3247.00,
         "categoria": "Quarto"
       },
       {
-        "nome": "Ar Condicionado Split Hi Wall Samsung WindFree AI Inverter 12.000 Btus Frio 220v R-32",
+        "nome": "Ar Condicionado Split Hi Wall Samsung WindFree AI Inverter ",
         "imagem": "ArCondicionado.jpg",
         "preco": 2689.00,
         "categoria": "Quarto"
@@ -92,16 +92,10 @@
         "categoria": "Quarto"
       },
       {
-        "nome": "TV- Samsung Smart TV 50 QLED 4K Q60D 2025",
+        "nome": "TV- Samsung Smart TV 55 QLED 2025",
         "imagem": "TVQuarto.jpg",
-        "preco": 3099.00,
+        "preco": 2500.00,
         "categoria": "Quarto"
-      },
-      {
-        "nome": "TV cozinha",
-        "imagem": "TVCozinha.jpg",
-        "preco": 1500.00,
-        "categoria": "Cozinha"
       },
       {
         "nome": "Kit Vassoura + Pá com Cabo + Rodo 40cm Noviça Bettanin",
@@ -110,15 +104,9 @@
         "categoria": "Cozinha"
       },
       {
-        "nome": "Aspirador de Pó Vertical com Fio Electrolux 1450W 2 em 1 Ultra Filtro HEPA Cinza (STK15)",
+        "nome": "Aspirador de Pó Vertical com Fio Electrolux 1450W 2 em 1 Ultra ",
         "imagem": "aspirador.png",
         "preco": 80.00,
-        "categoria": "Cozinha"
-      },
-      {
-        "nome": "kit 120 Unidades prendedor Plástico cod:001",
-        "imagem": "Prendedoresderoupa.jpg",
-        "preco": 50.00,
         "categoria": "Cozinha"
       },
       {
@@ -135,90 +123,90 @@
       },
       {
         "nome": "TV- Samsung Smart TV 50 QLED 4K Q60D 2024",
-        "imagem": "TVQuarto2.jpg",
+        "imagem": "TvQuarto.jpg",
         "preco": 2000.0,
         "categoria": "Quarto"
       },
       {
-        "nome": "Cooktop 4 Bocas de Indução Electrolux Experience com Unicook e Timer (IE60P)",
+        "nome": "Cooktop 4 Bocas de Indução Electrolux Experience ",
         "imagem": "Cooktop.jpg",
         "preco": 3899.0,
         "categoria": "Quarto"
       },
       {
-        "nome": "Coifa de Parede Electrolux 90cm Preta Pro Series com Painel Touch e Filtro Baffle (90CTV)",
+        "nome": "Coifa de Parede Electrolux 90cm Preta Pro Series com Painel",
         "imagem": "Coifa.jpg",
         "preco": 4249.0,
         "categoria": "Cozinha"
       },
       {
-        "nome": "Micro-ondas de Embutir Electrolux 34L Preto Experience com Descongelamento Assistido (ME3BP)",
+        "nome": "Micro-ondas  ",
         "imagem": "Microondas.jpg",
-        "preco": 2799.0,
+        "preco": 700.0,
         "categoria": "Cozinha"
       },
       {
-        "nome": "Forno de Embutir Electrolux Elétrico 80L Experience com FoodSensor Preto (OE8EF)",
+        "nome": "Forno de Embutir Electrolux Elétrico 80L Experience ",
         "imagem": "Forno.jpg",
         "preco": 3599.0,
         "categoria": "Cozinha"
       },
       {
-        "nome": "Geladeira Electrolux Frost Free Inverter 490L com AutoSense Inverse Black Inox Look (IB7B)",
+        "nome": "Geladeira Electrolux Frost Free Inverter 490L com AutoSense ",
         "imagem": "Geladeira.jpg",
         "preco": 5599.0,
         "categoria": "Cozinha"
       },
       {
-        "nome": "Purificador Electrolux Eletrônico c/ Painel Digital Blue Touch Bivolt Cinza (PA26G) - Bivolt",
+        "nome": "Purificador Electrolux Eletrônico c/ Painel Digital Blue Touch ",
         "imagem": "Filtro.jpg",
         "preco": 1269.0,
         "categoria": "Cozinha"
       },
       {
-        "nome": "Air Fryer Oven Electrolux por Rita Lobo 12L Digital Grafite Experience 1700W (EAF90)",
+        "nome": "Air Fryer Oven Electrolux por Rita Lobo 12L Digital Grafite ",
         "imagem": "AyrFryer.jpg",
         "preco": 1299.0,
         "categoria": "Cozinha"
       },
       {
-        "nome": "Sanduicheira Electrolux Efficient Inox Antiaderente (ESG20)",
+        "nome": "Sanduicheira Electrolux Efficient Inox Antiaderente",
         "imagem": "Sanduicheira.jpg",
         "preco": 159.0,
         "categoria": "Cozinha"
       },
       {
-        "nome": "Liquidificador Electrolux 1200w 1,75L Expert com Copo de Vidro e Tecnologia TruFlow Power System Preto (BLP70)",
+        "nome": "Liquidificador Electrolux 1200w 1,75L Expert com Copo ",
         "imagem": "Liquidificador.jpg",
         "preco": 999.0,
         "categoria": "Cozinha"
       },
       {
-        "nome": "Panela de Arroz Elétrica Electrolux por Rita Lobo 2L Preta Efficient Visor Glass (ERC10)",
+        "nome": "Panela de Arroz Elétrica Electrolux por Rita Lobo 2L",
         "imagem": "PanelaEletrica.jpg",
         "preco": 208.0,
         "categoria": "Cozinha"
       },
       {
-        "nome": "Lava-Louças Electrolux 8 Serviços Inox Compacta com Programa Eco (LE08S)",
+        "nome": "Lava-Louças Electrolux 8 Serviços Inox Compacta com Programa ",
         "imagem": "Lavalouca.jpg",
         "preco": 3399.0,
         "categoria": "Cozinha"
       },
       {
-        "nome": "Espremedor de Laranjas e Frutas Electrolux Efficient 800ml (ECP10)",
+        "nome": "Espremedor de Laranjas e Frutas Electrolux Efficient ",
         "imagem": "Espremedordefruta.jpg",
         "preco": 159.0,
         "categoria": "Cozinha"
       },
       {
-        "nome": "Cafeteira Elétrica Electrolux 15 Xícaras Efficient com Filtro Permanente Removível Cor Inox Preta (ECM10)",
+        "nome": "Cafeteira Elétrica Electrolux 15 Xícaras Efficient com Filtro",
         "imagem": "Cafeteira.jpg",
         "preco": 159.0,
         "categoria": "Cozinha"
       },
       {
-        "nome": "Batedeira Planetária Electrolux 750w Preta Experience Com Tigela 5l (EKM30)",
+        "nome": "Batedeira Planetária Electrolux 750w Preta Experience Com ",
         "imagem": "Batedeira.jpg",
         "preco": 659.0,
         "categoria": "Cozinha"
@@ -236,13 +224,7 @@
         "categoria": "Cozinha"
       },
       {
-        "nome": "Tesoura de Cozinha, Mundial, 666N, Preto",
-        "imagem": "Tesoura.jpg",
-        "preco": 42.0,
-        "categoria": "Cozinha"
-      },
-      {
-        "nome": "Aparelho de Jantar e Chá 20 Peças Tramontina de Porcelana Branco Redondo Silvia",
+        "nome": "Aparelho de Jantar e Chá 20 Peças Tramontina de Porcelana ",
         "imagem": "Aparelhodejantarecha.jpg",
         "preco": 329.0,
         "categoria": "Cozinha"
@@ -272,19 +254,19 @@
         "categoria": "Cozinha"
       },
       {
-        "nome": "Balde De Gelo Isolado De Aço Inoxidável De 3 Litros Com Tampa, Colher, Pinça E Coador",
+        "nome": "Balde De Gelo Isolado De Aço Inoxidável De 3 Litros Com Tampa, ",
         "imagem": "Baldedegelo.jpg",
         "preco": 228.0,
         "categoria": "Cozinha"
       },
       {
-        "nome": "Fruteira de Mesa de Vidro Haus Concept - Redonda Pavillion Transparente",
+        "nome": "Fruteira de Mesa de Vidro Haus Concept - Redonda ",
         "imagem": "Fruteira.jpg",
         "preco": 159.0,
         "categoria": "Cozinha"
       },
       {
-        "nome": "Aparelho de Jantar e Chá 20 Peças Tramontina de Porcelana Branco Redondo Silvia Prime",
+        "nome": "Aparelho de Jantar e Chá 20 Peças Tramontina de Porcelana ",
         "imagem": "Jogodepanelas.jpg",
         "preco": 329.0,
         "categoria": "Cozinha"
@@ -302,13 +284,13 @@
         "categoria": "Cozinha"
       },
       {
-        "nome": "Chaleira Elétrica Electrolux 1,7L Experience com Desligamento Automático (EEK25)",
+        "nome": "Chaleira Elétrica Electrolux 1,7L Experience com ",
         "imagem": "Chaleira.jpg",
         "preco": 289.0,
         "categoria": "Cozinha"
       },
       {
-        "nome": "Balança de Cozinha Digital Inox para Alimentos Resistente a Água Com Base Antiderrapante e Visor de Alta Definição Pesagem de 1g até 10kg",
+        "nome": "Balança de Cozinha Digital Inox para Alimentos Resistente ",
         "imagem": "Balançadecozinha.jpg",
         "preco": 54.9,
         "categoria": "Cozinha"
@@ -320,7 +302,7 @@
         "categoria": "Cozinha"
       },
       {
-        "nome": "Jogo de Utensílios Tramontina Utility em Aço Inox Acabamento Brilho 5 Peças",
+        "nome": "Jogo de Utensílios Tramontina Utility em Aço Inox",
         "imagem": "Jogodeutensílioseespátulas.jpg",
         "preco": 149.0,
         "categoria": "Cozinha"
@@ -352,7 +334,7 @@
       {
         "nome": "Passeio de teleférico no Cerro San Cristóbal",
         "imagem": "san.jpg",
-        "preco": 90.00,
+        "preco": 360.00,
         "categoria": "Lazer"
       },
       {
@@ -364,7 +346,7 @@
       {
         "nome": "Jantar com show folclórico chileno",
         "imagem": "jantarshow.jpg",
-        "preco": 310.00,
+        "preco": 610.00,
         "categoria": "Lazer"
       },
       {
@@ -383,6 +365,24 @@
         "nome": "Excursão à Ilha de Chiloé",
         "imagem": "chiloe.jpg",
         "preco": 600.00,
+        "categoria": "Lazer"
+      },
+      {
+        "nome": "Estação de ski no Chile",
+        "imagem": "ski.jpg",
+        "preco": 400.00,
+        "categoria": "Lazer"
+      },
+      {
+        "nome": "Embalse el yeso",
+        "imagem": "embalse-el-yeso.jpg",
+        "preco": 550.00,
+        "categoria": "Lazer"
+      },
+      {
+        "nome": "Huilo Huilo Nothofagus Hotel ",
+        "imagem": "not.jpg",
+        "preco": 1500.00,
         "categoria": "Lazer"
       }
     ]
