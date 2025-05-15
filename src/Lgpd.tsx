@@ -1,6 +1,3 @@
-import React from 'react';
-import {NavigationHeader} from "./components/NavigationHeader";
-import {FirstSubHeader} from "./components/FirstSubHeader";
 import styled from "styled-components";
 import {device} from "./App.theme.ts";
 
