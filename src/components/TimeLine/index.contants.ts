@@ -14,14 +14,14 @@ import santa_rita from '../../assets/santa_rita.jpg'
 import pesca from '../../assets/pesca.jpg'
 import rifania from '../../assets/rifania.jpg'
 
-interface TimeLineItem {
+export interface TimeLineItemProps {
     title: string;
     date: string;
     description: string;
     image: string;
 }
 
-export const TIME_LINE_ITEMS: TimeLineItem[] = [
+export const TIME_LINE_ITEMS: TimeLineItemProps[] = [
     {
         title: 'Corujão',
         description: 'Nos vimos pela primeira vez ao vivo durante o Corujão, um evento de jogos da empresa. Entre risadas, partidas animadas e conversas leves, tudo simplesmente se encaixou.',

@@ -1,8 +1,8 @@
 import axios from "axios";
 import {toast} from "react-toastify";
-
+//    baseURL: 'http://localhost:3000',
 export const api = axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: 'https://app.carols2michel.kuguio.com.br',
     headers: {
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.3YFWqwzrRkYSfdPC6pVzMebSLGiONvvd-Mg0SRs_Bwo'
     }

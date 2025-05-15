@@ -24,6 +24,11 @@ export const HeaderWrapper = styled(ParallaxBanner)`
         z-index: 0; /* Mantém esse pseudo-elemento atrás do conteúdo */
         background-image: linear-gradient(rgba(77, 48, 26, 0.5), rgba(85, 85, 85, 0.8)), url(${minhaFoto}) !important; /* Adiciona o gradiente com a imagem */
         opacity: 0.8;
+        -moz-opacity: 0.8;
+        -webkit-opacity: 0.8;
+        -khtml-opacity: 0.8;
+        -ms-opacity: 0.8;
+        -o-opacity: 0.8;
         filter: blur(1px);
         transform: rotate(9deg);
     }
@@ -182,8 +187,13 @@ export const Line = styled.div`
         background-repeat: no-repeat;
         background-size: contain;
         opacity: 0.5;
+        -moz-opacity: 0.5;
+        -webkit-opacity: 0.5;
+        -khtml-opacity: 0.5;
+        -ms-opacity: 0.5;
+        -o-opacity: 0.5;
         transform: rotate(136deg);
-        filter: invert(24%) sepia(93%) saturate(610%) hue-rotate(-56deg) brightness(92%) contrast(87%);;
+        filter:  opacity(60%) invert(24%) sepia(50%)  brightness(100%) contrast(100%) hue-rotate(-56deg) saturate(400%) drop-shadow(4px 4px 6px rgba(69, 46, 37, 0.5));
     }
 
     &::after {
@@ -199,8 +209,12 @@ export const Line = styled.div`
         background-repeat: no-repeat;
         background-size: contain;
         opacity: 0.5;
+        -moz-opacity: 0.5;
+        -webkit-opacity: 0.5;
+        -khtml-opacity: 0.5;
+        -ms-opacity: 0.5;
+        -o-opacity: 0.5;
         transform: rotate(-31deg);
-        filter: invert(24%) sepia(93%) saturate(610%) hue-rotate(-56deg) brightness(92%) contrast(87%);
-
+        filter:  opacity(60%) invert(24%) sepia(50%)  brightness(100%) contrast(100%) hue-rotate(-56deg) saturate(400%) drop-shadow(4px 4px 6px rgba(69, 46, 37, 0.5));
     }
 `

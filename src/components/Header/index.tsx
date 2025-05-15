@@ -12,13 +12,14 @@ import {useCallback, useEffect, useState} from "react";
 import {Link} from "react-router";
 import {IoIosMenu, IoIosClose} from "react-icons/io";
 import minhaFoto from '../../assets/groom-putting-ring-bride-s-finger.jpg'
+import {useReadyStore} from "../../ready.store.ts";
 export const Header = () => {
     const targetDate = "2025-09-27T17:00:00Z";
     const [isScrolled, setIsScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [activeSection, setActiveSection] = useState("home");
     const changeOpen = () => setIsOpen(current => !current);
-
+    const {makeHeaderReady} = useReadyStore();
     const sections = [
         "home",
         "quem-somos",
@@ -38,8 +39,9 @@ export const Header = () => {
         };
 
         window.addEventListener("scroll", handleScroll);
+        makeHeaderReady();
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [makeHeaderReady]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -84,7 +86,7 @@ export const Header = () => {
 
     return (
 
-        <HeaderWrapper id={'home'} menuIsOpen={isOpen}  layers={[
+        <HeaderWrapper id={'home'} open={isOpen}  layers={[
             {
                 image: minhaFoto,
                 speed: -30,
