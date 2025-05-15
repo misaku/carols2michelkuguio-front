@@ -5,6 +5,7 @@ import {BrowserRouter, Navigate, Route, Routes} from "react-router";
 import {SmoothScroll} from "./components/SmoothScrooll.tsx";
 import {ParallaxProvider} from "react-scroll-parallax";
 import InvitePage from "./InvitePage.tsx";
+import {Lgpd} from "./Lgpd.tsx";
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
@@ -14,7 +15,7 @@ createRoot(document.getElementById('root')!).render(
                     <Routes>
                         <Route path="/confirmacao" element={<InvitePage/>}/>
                         <Route path="/*" element={<App/>}/>
-
+                        <Route path="/politica-de-privacidade" element={<Lgpd/>}/>
                         {/*/!* Rotas separadas (exemplo: carrinho de compras) *!/*/}
                         {/*<Route path="/presenteie-os-noivos" element={<Cart />} />*/}
 
