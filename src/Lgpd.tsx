@@ -59,8 +59,6 @@ export const Container = styled.section`
 export const Lgpd = () => {
     return (
         <Wrapper>
-            <NavigationHeader hasCart={true}/>
-            <FirstSubHeader title={'Política de Privacidade'} id={'politica-de-privacidade'} invert={true}/>
             <Container>
                 <p><strong>Última atualização:</strong> 14 de maio de 2025</p>
 

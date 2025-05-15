@@ -14,8 +14,8 @@ createRoot(document.getElementById('root')!).render(
                 <SmoothScroll>
                     <Routes>
                         <Route path="/confirmacao" element={<InvitePage/>}/>
-                        <Route path="/*" element={<App/>}/>
                         <Route path="/politica-de-privacidade" element={<Lgpd/>}/>
+                        <Route path="/*" element={<App/>}/>
                         {/*/!* Rotas separadas (exemplo: carrinho de compras) *!/*/}
                         {/*<Route path="/presenteie-os-noivos" element={<Cart />} />*/}
 
