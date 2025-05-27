@@ -3,8 +3,10 @@ import {useCallback, useEffect, useState} from "react";
 import {Link} from "react-router";
 import {IoIosClose, IoIosMenu} from "react-icons/io";
 import {useReadyStore} from "../../ready.store.ts";
-
-export const NavigationHeader = () => {
+interface NavigationHeaderProps {
+    hasCart?:boolean;
+}
+export const NavigationHeader = (props:NavigationHeaderProps) => {
 
 
     const [isOpen, setIsOpen] = useState(false);
@@ -65,7 +67,7 @@ export const NavigationHeader = () => {
     },[activeSection])
 
     return (
-        <WrapperNavBar >
+        <WrapperNavBar hasCart={props.hasCart} >
             <MobileHeader><WrapperIcon  onClick={changeOpen}>{isOpen ? (<IoIosClose/>) : (
                 <IoIosMenu/>)}</WrapperIcon></MobileHeader>
             <NavBar  isOpen={isOpen}>
