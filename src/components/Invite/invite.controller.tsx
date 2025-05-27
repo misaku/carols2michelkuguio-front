@@ -3,7 +3,8 @@ import {useCallback, useEffect, useMemo, useState} from "react";
 import {api} from "../../service.ts";
 import {useForm} from "react-hook-form";
 import {RequestProps, ResponseProps} from "./invite.types.tsx";
-import {useSearchParams} from "react-router";
+import {useNavigate, useSearchParams} from "react-router";
+import {useReadyStore} from "../../ready.store.ts";
 
 export const useInviteController = () => {
     const [phone, setPhone] = useState("");
@@ -13,13 +14,13 @@ export const useInviteController = () => {
     const [loading, setLoading] = useState<boolean>(false);
     const {control, handleSubmit} = useForm();
     const [searchParams, setSearchParams] = useSearchParams();
-
+    const {makeInviteReady} = useReadyStore();
     const invite = useMemo(()=>searchParams.get('invite'),[searchParams]);
     const clearInvite = useCallback(() => {
         searchParams.delete("invite");
         setSearchParams(searchParams);
     },[searchParams, setSearchParams]);
-
+    const navigate = useNavigate();
     const clearAll = useCallback(() => {
         clearInvite();
         setInviteType(undefined)
@@ -91,15 +92,16 @@ export const useInviteController = () => {
         const response = await api.patch(`/invite/${responseData?.id}`, payload)
         if (response) {
             clearAll()
+            navigate(`/home`)
         }
-    },[clearAll, responseData])
+    },[clearAll, navigate, responseData?.id])
     const confirm = useCallback(async () => {
         const payload: RequestProps = {
             confirmation: true,
             users: responseData?.users.map(user => ({id: user.id, confirmation: true}))
         }
         const cuntHonors = responseData?.users.filter(user => !!user.honor).length
-        if (cuntHonors == responseData?.users?.length) {
+        if (cuntHonors == responseData?.users?.length || cuntHonors == 0 && responseData?.users?.length ==1) {
             await updateInvite(payload)
             return;
         }
@@ -122,12 +124,17 @@ export const useInviteController = () => {
         const response = await api.patch(`/invite/${responseData?.id}`, payload)
         if (response) {
             clearAll()
+            navigate(`/home`)
         }
-    },[clearAll, responseData?.id, responseData?.users])
+    },[clearAll, navigate, responseData?.id, responseData?.users])
 
+    const needConfirmation = useMemo(()=> responseData?.confirmation === null || responseData?.confirmation === undefined, [responseData])
     useEffect(()=>{
         if(invite) handleSearch().then()
     },[handleSearch, invite])
+    useEffect(() => {
+        makeInviteReady();
+    }, [makeInviteReady]);
     return {
         recuse,
         confirm,
@@ -140,6 +147,7 @@ export const useInviteController = () => {
         responseData,
         requestData,
         phone,
-        finish
+        finish,
+        needConfirmation
     }
 }

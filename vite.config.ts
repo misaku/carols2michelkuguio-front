@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
+//import react from '@vitejs/plugin-react'
+import vercel from 'vite-plugin-vercel';
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [vercel()],
   server: {
-    allowedHosts: ['nasty-cases-show.loca.lt', 'b76d-2804-5d80-8140-add9-00-1003.ngrok-free.app'],
+    allowedHosts: ['carols2michel.kuguio.com.br'],
   },
 })

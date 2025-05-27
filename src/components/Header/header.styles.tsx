@@ -5,61 +5,111 @@ import flower from '../../assets/flower-small.svg'
 import {device} from "../../App.theme.ts";
 import {ParallaxBanner} from "react-scroll-parallax";
 const slideFromLeft = keyframes`
-  from {
-    transform: translateX(-100%) rotate(-0deg);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0) rotate(-130deg);
-    opacity: 0.5;
-  }
+    from {
+        transform: translateX(-100%) rotate(-0deg);
+        opacity: 0;
+        -moz-opacity: 0;
+        -webkit-opacity: 0;
+        -khtml-opacity: 0;
+        -ms-opacity: 0;
+        -o-opacity: 0;
+    }
+    to {
+        transform: translateX(0) rotate(-130deg);
+        opacity: 0.5;
+        -moz-opacity: 0.5;
+        -webkit-opacity: 0.5;
+        -khtml-opacity: 0.5;
+        -ms-opacity: 0.5;
+        -o-opacity: 0.5;
+    }
 `;
 
 const slideFromRight = keyframes`
-  from {
-    transform: translateX(100%) rotate(150deg);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0) rotate(50deg);
-    opacity: 0.5;
-  }
+    from {
+        transform: translateX(100%) rotate(150deg);
+        opacity: 0;
+        -moz-opacity: 0;
+        -webkit-opacity: 0;
+        -khtml-opacity: 0;
+        -ms-opacity: 0;
+        -o-opacity: 0;
+    }
+    to {
+        transform: translateX(0) rotate(50deg);
+        opacity: 0.5;
+        -moz-opacity: 0.5;
+        -webkit-opacity: 0.5;
+        -khtml-opacity: 0.5;
+        -ms-opacity: 0.5;
+        -o-opacity: 0.5;
+    }
 `;
 
 const slideToUp = keyframes`
-  from {
-    transform: translateY(50%) ;
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    from {
+        transform: translateY(50%);
+        opacity: 0;
+        -moz-opacity: 0;
+        -webkit-opacity: 0;
+        -khtml-opacity: 0;
+        -ms-opacity: 0;
+        -o-opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        -moz-opacity: 1;
+        -webkit-opacity: 1;
+        -khtml-opacity: 1;
+        -ms-opacity: 1;
+        -o-opacity: 1;
+    }
 `;
 
 const slideToDown = keyframes`
-  from {
-    transform: translateY(-50%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+        -moz-opacity: 0;
+        -webkit-opacity: 0;
+        -khtml-opacity: 0;
+        -ms-opacity: 0;
+        -o-opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        -moz-opacity: 1;
+        -webkit-opacity: 1;
+        -khtml-opacity: 1;
+        -ms-opacity: 1;
+        -o-opacity: 1;
+    }
 `;
 const zoom = keyframes`
-  from {
-    transform: scale(0%) rotate(150deg);
-    opacity: 0;
-  }
-  to {
-    transform: scale(100%) rotate(0deg);
-    opacity: 1;
-  }
+    from {
+        transform: scale(0%) rotate(150deg);
+        opacity: 0;
+        -moz-opacity: 0;
+        -webkit-opacity: 0;
+        -khtml-opacity: 0;
+        -ms-opacity: 0;
+        -o-opacity: 0;
+    }
+    to {
+        transform: scale(100%) rotate(0deg);
+        opacity: 1;
+        -moz-opacity: 1;
+        -webkit-opacity: 1;
+        -khtml-opacity: 1;
+        -ms-opacity: 1;
+        -o-opacity: 1;
+    }
 `;
 
 interface HeaderWrapperProps {
-    menuIsOpen?: boolean;
+    open?: boolean;
 }
 export const HeaderWrapper = styled(ParallaxBanner)<HeaderWrapperProps>`
     display: flex;
@@ -76,7 +126,7 @@ export const HeaderWrapper = styled(ParallaxBanner)<HeaderWrapperProps>`
     padding-bottom: 15rem;
     overflow: hidden;
     @media ${device.mobile} {
-        ${({menuIsOpen}) => (menuIsOpen && css`
+        ${({open}) => (open && css`
             padding-top: 300px;
             height: calc(100vh + 200px);
         `)}
@@ -84,6 +134,11 @@ export const HeaderWrapper = styled(ParallaxBanner)<HeaderWrapperProps>`
     &>div:first-child {
         background-image: linear-gradient(rgba(77, 48, 26, 0.5), rgba(85, 85, 85, 0.8)), url(${minhaFoto}) !important; /* Adiciona o gradiente com a imagem */
         opacity: 0.5;
+        -moz-opacity: 0.5;
+        -webkit-opacity: 0.5;
+        -khtml-opacity: 0.5;
+        -ms-opacity: 0.5;
+        -o-opacity: 0.5;
         filter: blur(1px)
     }
 
@@ -153,7 +208,7 @@ export const NavBar = styled.nav<NavBarProps>`
             justify-content: center;
             align-items: center;
             list-style: none;
-            min-height: 6rem;
+            min-height: 60px;
             &:hover {
                 background-color: rgba(0, 0, 0, 0.05);
             }
@@ -329,12 +384,17 @@ export const WrapperContent = styled.div`
         background-repeat: no-repeat;
         background-size: contain;
         opacity: 0;
+        -moz-opacity: 0;
+        -webkit-opacity: 0;
+        -khtml-opacity: 0;
+        -ms-opacity: 0;
+        -o-opacity: 0;
         transform: rotate(50deg);
         -webkit-transform: rotate(50deg);
         -moz-transform: rotate(50deg);
         -ms-transform: rotate(50deg);
         -o-transform: rotate(50deg);
-        filter: invert(24%) sepia(93%) saturate(610%) hue-rotate(-56deg) brightness(92%) contrast(87%);
+        filter: opacity(100%)  invert(40%) sepia(100%) brightness(100%) contrast(80%) hue-rotate(-35deg) saturate(200%) drop-shadow(4px 4px 6px rgba(69, 46, 37, 0.5));
         animation: ${slideFromRight} 1.5s ease-in-out forwards;
     }
 
@@ -350,13 +410,18 @@ export const WrapperContent = styled.div`
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;
-        opacity: 0.5;
+        opacity: 0;
+        -moz-opacity: 0;
+        -webkit-opacity: 0;
+        -khtml-opacity: 0;
+        -ms-opacity: 0;
+        -o-opacity: 0;
         transform: rotate(-130deg);
         -webkit-transform: rotate(-130deg);
         -moz-transform: rotate(-130deg);
         -ms-transform: rotate(-130deg);
         -o-transform: rotate(-130deg);
-        filter: invert(24%) sepia(93%) saturate(610%) hue-rotate(-56deg) brightness(92%) contrast(87%);
+        filter: opacity(100%)  invert(40%) sepia(100%) brightness(100%) contrast(80%) hue-rotate(-35deg) saturate(200%) drop-shadow(4px 4px 6px rgba(69, 46, 37, 0.5));
         animation: ${slideFromLeft} 1.5s ease-in-out forwards;
     }
 
@@ -365,7 +430,7 @@ export const WrapperContent = styled.div`
         padding: 5rem 9rem;
         position: relative;;
 
-        &::before , &::after {
+        &::before, &::after {
             width: 18rem;
             height: 18rem;
         }
