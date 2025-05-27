@@ -93,7 +93,10 @@ export const Checkout: React.FC = memo(() => {
         const order_nsu = response.data.id;
         const redirect_url = 'https://carols2michel.kuguio.com.br/checkout'
         const link = `https://checkout.infinitepay.io/${handle}?items=${items}&order_nsu=${order_nsu}&redirect_url=${redirect_url}&customer_name=${payload.name}&customer_email=${payload.email}`
-        window.location.href = link;
+        const a = document.createElement('a');
+        a.href = link;
+        a.target = '_blank';
+        a.click();
     });
     useEffect(() => {
         if(payment) {
