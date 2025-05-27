@@ -13,6 +13,7 @@ import {CartProvider} from "./contexts/cart-context";
 import {ProductsProvider} from "./contexts/products-context";
 import {ToastContainer} from "react-toastify";
 import {Lgpd} from "./Lgpd.tsx";
+import {Checkout} from "./components/Checkout";
 
 
 createRoot(document.getElementById('root')!).render(
@@ -26,9 +27,10 @@ createRoot(document.getElementById('root')!).render(
                             <ToastContainer/>
                             <SmoothScroll>
                                 <Routes>
-                                    <Route path="/confirmacao" element={<InvitePage/>}/>
-                                    <Route path="/presenteie-os-noivos" element={<AppCart/>}/>
-                                    <Route path="/politica-de-privacidade" element={<Lgpd/>}/>
+                                    <Route path="/confirmacao" element={<InvitePage />}/>
+                                    <Route path="/checkout" element={<Checkout />}/>
+                                    <Route path="/presenteie-os-noivos" element={<AppCart />}/>
+                                    <Route path="/politica-de-privacidade" element={<Lgpd />}/>
                                     <Route path="/*" element={<App/>}/>
                                     <Route path="*" element={<Navigate to="/"/>}/>
 

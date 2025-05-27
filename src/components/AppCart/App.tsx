@@ -21,7 +21,7 @@ function AppCart() {
 
     return (<>
 
-                <NavigationHeader hasCart={true}/>
+            <NavigationHeader hasCart={true}/>
 
             <FirstSubHeader title={'Presenteie o noivos'} id={'presenteie-os-noivos'} invert={true}/>
             <S.Container>

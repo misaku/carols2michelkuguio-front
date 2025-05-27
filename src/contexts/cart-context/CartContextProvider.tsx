@@ -1,4 +1,4 @@
-import { createContext, useContext, FC, useState } from 'react';
+import React, { createContext, useContext, FC, useState } from 'react';
 import { ICartProduct, ICartTotal } from '../../models';
 
 export interface ICartContext {
@@ -25,11 +25,11 @@ const totalInitialValues = {
   productQuantity: 0,
   installments: 0,
   totalPrice: 0,
-  currencyId: 'USD',
-  currencyFormat: '$',
+  currencyId: 'BRL',
+  currencyFormat: 'R$',
 };
 
-const CartProvider: FC = (props) => {
+const CartProvider: FC<React.PropsWithChildren> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [products, setProducts] = useState<ICartProduct[]>([]);
   const [total, setTotal] = useState<ICartTotal>(totalInitialValues);

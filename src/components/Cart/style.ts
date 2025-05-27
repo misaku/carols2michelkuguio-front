@@ -16,6 +16,7 @@ export const CartButton = styled.button`
   cursor: pointer;
   z-index: 2;
   font-size: 1.6rem;
+  font-family: Montserrat, "Open Sans", Raleway, sans-serif;
   &:focus-visible {
     outline: 3px solid ${({ theme }) => theme.colors.secondary};
   }
@@ -37,7 +38,7 @@ export const Container = styled.div<IContainer>`
   background-color: ${({ theme }) => theme.colors.primary};
   box-sizing: border-box;
   z-index: 999;
-
+  font-family: Montserrat, "Open Sans", Raleway, sans-serif;
   transition: right 0.2s;
 
   ${CartButton} {
@@ -78,6 +79,7 @@ export const CartIcon = styled.div<ICartIcon>`
 
 export const CartQuantity = styled.div`
   display: inline-block;
+  font-family: Montserrat, "Open Sans", Raleway, sans-serif;
   width: 18px;
   height: 18px;
   color: ${({ theme }) => color(theme.colors.primary).darken(0.3).toString()};
@@ -95,7 +97,7 @@ export const CartQuantity = styled.div`
 export const CartContent = styled.div`
   height: 100%;
   overflow-y: scroll;
-
+  font-family: Montserrat, "Open Sans", Raleway, sans-serif;
   /* MAC scrollbar para desktop*/
   @media screen and (min-width: 640px) {
     &::-webkit-scrollbar {
@@ -116,12 +118,14 @@ export const CartContentHeader = styled.div`
   box-sizing: border-box;
   text-align: center;
   padding: 45px 0;
+  font-family: Montserrat, "Open Sans", Raleway, sans-serif;
 `;
 
 export const HeaderTitle = styled.span`
   font-weight: bold;
   font-size: 1.2em;
   vertical-align: middle;
+  font-family: Montserrat, "Open Sans", Raleway, sans-serif;
 `;
 
 export const Sub = styled.p`
@@ -130,6 +134,7 @@ export const Sub = styled.p`
   vertical-align: middle;
   display: inline-block;
   font-size: 1.6rem;
+  font-family: Montserrat, "Open Sans", Raleway, sans-serif;
 `;
 
 export const SubPrice = styled.div`
@@ -139,16 +144,19 @@ export const SubPrice = styled.div`
   vertical-align: middle;
   display: inline-block;
   font-size: 1.3rem;
+  font-family: Montserrat, "Open Sans", Raleway, sans-serif;
 `;
 
 export const SubPriceValue = styled.p`
   color: ${({ theme }) => color(theme.colors.secondary).lighten(0.1).toString()};
   font-size: 2.6rem;
   margin: 0;
+  font-family: Montserrat, "Open Sans", Raleway, sans-serif;
 `;
 
 export const SubPriceInstallment = styled.p`
   margin: 0;
+  font-family: Montserrat, "Open Sans", Raleway, sans-serif;
 `;
 
 export const CheckoutButton = styled.button`
@@ -162,7 +170,8 @@ export const CheckoutButton = styled.button`
   margin-top: 40px;
   cursor: pointer;
   outline: none;
-
+  font-family: Montserrat, "Open Sans", Raleway, sans-serif;
+  
   transition: background-color 0.2s;
 
   &:focus-visible {
@@ -183,7 +192,7 @@ export const CartFooter = styled.div`
   height: 200px;
   z-index: 2;
   background-color: ${({ theme }) => theme.colors.primary};
-
+  font-family: Montserrat, "Open Sans", Raleway, sans-serif;
   &::before {
     content: '';
     width: 100%;
