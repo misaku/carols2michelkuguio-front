@@ -228,7 +228,7 @@ export const Invite: React.FC = memo(() => {
                                                 Preto-SP <br/>
                                                 Horário: 16:30
                                             </p>
-                                            <p>Por favor, confirme sua presença até o dia {format(new Date(responseData?.expirationDate||''),"dd 'de' MMMM 'de' YYYY",{locale: ptBR})}!</p>
+                                            <p>Por favor, confirme sua presença até o dia {format(new Date(responseData?.expirationDate||''),"dd 'de' MMMM 'de' yyyy",{locale: ptBR})}!</p>
                                             <p>
                                                 Com carinho, <strong>Michel dos Santos Kuguio </strong> & <strong>Carolina
                                                 Tavares de Oliveira.</strong>
