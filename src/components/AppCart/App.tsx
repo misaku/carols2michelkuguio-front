@@ -25,12 +25,32 @@ function AppCart() {
 
                 <S.Card>
                     <p>Olá!</p>
-                    <p>A sua presença no nosso grande dia é o que mais importa para nós!</p>
-                    <p>Mas, se quiser nos presentear, queremos compartilhar um detalhe especial sobre nossa lista de presentes: todos os itens são simbólicos. Ao escolher um presente, você estará contribuindo com o valor correspondente em dinheiro – e, ao final, juntaremos todas as contribuições para comprarmos juntos os itens escolhidos com carinho para o nosso novo lar</p>
-                    <p>Ah, e ao realizar sua contribuição, será solicitado seu endereço — não se preocupe, ele é exigido apenas por motivos de segurança do provedor de pagamento, e não será usado para envio de nada.</p>
-                    <p>Agradecemos de coração por todo o carinho e por fazer parte desse momento tão especial nas nossas vidas!</p>
+                    <p>
+                        Sua presença no nosso grande dia é o que mais importa para nós!
+                    </p>
+
+                    <p>
+                        Se quiser nos presentear, nossa lista é simbólica: ao escolher um presente, você contribui com o
+                        valor correspondente, e depois reuniremos todas as contribuições para montarmos nosso novo lar
+                        com muito carinho.
+                    </p>
+
+                    <p>
+                        Assim, evitamos presentes duplicados e registramos cada gesto de amizade para guardar na
+                        memória.
+                    </p>
+
+                    <p>
+                        O endereço solicitado na hora da contribuição é apenas uma exigência de segurança do provedor de
+                        pagamento e não será usado para envio de nada.
+                    </p>
+
+                    <p>
+                        Agradecemos de coração por todo o carinho e por fazer parte desse momento tão especial!
+                    </p>
+
                     <p>Com carinho,<br/>
-                        Carolina e Michel.</p>
+                        Michel e Carol.</p>
                     <S.CardButton onClick={setClose}>Clique para continuar</S.CardButton>
                 </S.Card>
 
