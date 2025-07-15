@@ -25,17 +25,12 @@ function AppCart() {
 
                 <S.Card>
                     <p>Olá!</p>
-                    <p>Queremos compartilhar um detalhe sobre nossa lista de presentes: os itens são simbólicos. Ao
-                        escolher um presente, você estará contribuindo com o valor correspondente em dinheiro – dessa
-                        forma, ao final, reuniremos todos os valores para comprarmos juntos os itens escolhidos.</p>
-                    <p>Se desejar que sua contribuição seja destinada a algum item específico, é só deixar um recadinho
-                        pra gente na mensagem!</p>
-                    <p>Ah, e ao realizar sua contribuição, será solicitado o seu endereço – não se preocupe, ele é
-                        exigido apenas por questões de segurança do provedor de pagamento, e não será utilizado para
-                        enviar nada.</p>
-                    <p>Agradecemos de coração pelo carinho e por fazer parte desse momento tão especial!</p>
+                    <p>A sua presença no nosso grande dia é o que mais importa para nós!</p>
+                    <p>Mas, se quiser nos presentear, queremos compartilhar um detalhe especial sobre nossa lista de presentes: todos os itens são simbólicos. Ao escolher um presente, você estará contribuindo com o valor correspondente em dinheiro – e, ao final, juntaremos todas as contribuições para comprarmos juntos os itens escolhidos com carinho para o nosso novo lar</p>
+                    <p>Ah, e ao realizar sua contribuição, será solicitado seu endereço — não se preocupe, ele é exigido apenas por motivos de segurança do provedor de pagamento, e não será usado para envio de nada.</p>
+                    <p>Agradecemos de coração por todo o carinho e por fazer parte desse momento tão especial nas nossas vidas!</p>
                     <p>Com carinho,<br/>
-                        Crolina e Michel.</p>
+                        Carolina e Michel.</p>
                     <S.CardButton onClick={setClose}>Clique para continuar</S.CardButton>
                 </S.Card>
 
