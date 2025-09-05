@@ -7,6 +7,7 @@ import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lg-thumbnail.css';
 import 'lightgallery/css/lg-autoplay.css';
 import 'lightgallery/css/lg-fullscreen.css';
+import 'lightgallery/css/lg-transitions.css';
 
 // If you want you can use SCSS instead of css
 import 'lightgallery/scss/lightgallery.scss';
@@ -14,6 +15,7 @@ import 'lightgallery/scss/lg-zoom.scss';
 import 'lightgallery/scss/lg-autoplay.scss';
 import 'lightgallery/scss/lg-thumbnail.scss';
 import 'lightgallery/scss/lg-fullscreen.scss';
+import 'lightgallery/scss/lg-transitions.scss';
 
 // import plugins if you need
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
@@ -113,6 +115,7 @@ export function Gallery() {
                     mode="lg-fade"
                     pager={false}
                     thumbnail={true}
+                    animateThumb={true}
                     galleryId={'nature'}
                     licenseKey={'19618204-E93C-43CE-9A60-C64B2A4D4AC2'}
                     autoplayFirstVideo={false}
