@@ -25,6 +25,7 @@ export interface WrapperCardProps {
 export const WrapperCard = styled.section<WrapperCardProps>`
     flex: 1;
     position: relative;
+    overflow: hidden;
     &::before {
         content: "";
         width: 400px;
