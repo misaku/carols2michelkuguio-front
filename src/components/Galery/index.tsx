@@ -25,9 +25,8 @@ import lgZoom from 'lightgallery/plugins/zoom';
 import lgAutoplay from 'lightgallery/plugins/autoplay';
 import lgFullscreen from 'lightgallery/plugins/fullscreen';
 import lgVideo from 'lightgallery/plugins/video';
-import lgVimeo from 'lightgallery/plugins/vimeoThumbnail';
 import fjGallery from 'flickr-justified-gallery';
-import {Container, IFrame, Text, WrapperCard} from "./styles.tsx";
+import {Container, Text, WrapperCard} from "./styles.tsx";
 
 const images = [
     'kuguio_C&K-4.jpg',
