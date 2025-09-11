@@ -8,6 +8,7 @@ import 'lightgallery/css/lg-thumbnail.css';
 import 'lightgallery/css/lg-autoplay.css';
 import 'lightgallery/css/lg-fullscreen.css';
 import 'lightgallery/css/lg-transitions.css';
+import 'lightgallery/css/lg-video.css';
 
 // If you want you can use SCSS instead of css
 import 'lightgallery/scss/lightgallery.scss';
@@ -16,14 +17,17 @@ import 'lightgallery/scss/lg-autoplay.scss';
 import 'lightgallery/scss/lg-thumbnail.scss';
 import 'lightgallery/scss/lg-fullscreen.scss';
 import 'lightgallery/scss/lg-transitions.scss';
+import 'lightgallery/scss/lg-video.scss';
 
 // import plugins if you need
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
 import lgAutoplay from 'lightgallery/plugins/autoplay';
 import lgFullscreen from 'lightgallery/plugins/fullscreen';
+import lgVideo from 'lightgallery/plugins/video';
+import lgVimeo from 'lightgallery/plugins/vimeoThumbnail';
 import fjGallery from 'flickr-justified-gallery';
-import {Container, Text, WrapperCard} from "./styles.tsx";
+import {Container, IFrame, Text, WrapperCard} from "./styles.tsx";
 
 const images = [
     'kuguio_C&K-4.jpg',
@@ -90,6 +94,8 @@ const images = [
     'kuguio_C&K-188.jpg',
     'kuguio_C&K-193.jpg',
     'kuguio_C&K-195.jpg',
+    'filmagem1.jpeg',
+    'filmagem2.jpeg',
 ]
 
 export function Gallery() {
@@ -111,15 +117,24 @@ export function Gallery() {
                 </Text>
                 <LightGallery
                     speed={500}
-                    plugins={[lgFullscreen, lgAutoplay, lgThumbnail, lgZoom]}
+                    plugins={[lgFullscreen, lgAutoplay, lgThumbnail, lgZoom, lgVideo]}
                     mode="lg-fade"
                     pager={false}
                     thumbnail={true}
                     animateThumb={true}
                     galleryId={'nature'}
                     licenseKey={'19618204-E93C-43CE-9A60-C64B2A4D4AC2'}
-                    autoplayFirstVideo={false}
                     elementClassNames={'gallery'}
+                    autoplayFirstVideo={true}
+                    vimeoPlayerParams={{
+                        autoplay: 0,
+                        muted: 0,
+                        byline: 0,
+                        portrait: 0,
+                        title: 0,
+                        badge: 0,
+                        autopause: 0
+                    }}
                     mobileSettings={{
                         controls: false,
                         showCloseIcon: false,
@@ -127,6 +142,15 @@ export function Gallery() {
                         rotate: false,
                     }}
                 >
+                    <a  className="gallery__item"
+                        data-src="//vimeo.com/1117355921"
+                        data-sub-html="<h4>Filmagem Pre Wedding</h4><p>Video by <a target='_blank' href='https://vimeo.com/giulianosilveira'>Giuliano Silveira</a></p>"
+                    >
+                        <img
+                            className="img-responsive"
+                            src="/static/galery/prewedding/thumb/filmagem0.jpg"
+                        />
+                    </a>
                     {images.map((image, index) => (
                         <a key={index} href={`/static/galery/prewedding/${image}`} className="gallery__item">
                             <img className="img-responsive" alt={image}

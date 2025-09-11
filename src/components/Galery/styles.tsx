@@ -77,3 +77,9 @@ export const Text = styled.p`
     }
 `
 
+export const IFrame = styled.iframe`
+    width: 100%;
+    height: auto;
+    aspect-ratio: 640/360;
+    border-radius: 7px;
+`
